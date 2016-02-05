@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var otmazaTextLabel: UILabel!
     
+    // MARK: - Start view
     override func viewDidLoad() {
         super.viewDidLoad()
         if let fileUrl = NSBundle.mainBundle().URLForResource("Content", withExtension: "plist") {
@@ -30,9 +31,18 @@ class ViewController: UIViewController {
                 content = array as! [String]
             }
         }
+        setBlur()
         showRandomBG()
     }
     
+    func setBlur() {
+        blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
+        blurEffectView.frame = view.bounds
+        blurEffectView.alpha = 0.0
+        backgroundImageView.addSubview(blurEffectView)
+    }
+
+    // MARK: - next Otmaza
     @IBAction func nextOtmazaButton(sender: AnyObject) {
         showRandomBG()
     }
@@ -40,7 +50,7 @@ class ViewController: UIViewController {
     func showRandomBG() {
         setImage()
         setOtmaza()
-        setBlur()
+        updateBlur()
     }
     
     func setImage() {
@@ -55,8 +65,17 @@ class ViewController: UIViewController {
         
     }
     
-    func setBlur() {
-        blurEffectView.removeFromSuperview()
+    func getAnotherRandomNumber(prevNumber: Int, maxValue: UInt32) -> Int {
+        var result = Int(arc4random_uniform(maxValue))
+        if prevNumber != -1 {
+            while result == prevNumber {
+                result = Int(arc4random_uniform(7))
+            }
+        }
+        return result
+    }
+
+    func updateBlur() {
         blurAlpha = 0.0
         blurTimer.invalidate()
         blurTimer = NSTimer.scheduledTimerWithTimeInterval(blurTimerPeriod, target: self, selector: "changeBlur", userInfo: nil, repeats: true)
@@ -69,22 +88,9 @@ class ViewController: UIViewController {
             blurTimer.invalidate()
             return
         }
-        blurEffectView.removeFromSuperview()
-        blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        blurEffectView.frame = view.bounds
         blurEffectView.alpha = blurAlpha
-        backgroundImageView.addSubview(blurEffectView)
     }
-    
-    func getAnotherRandomNumber(prevNumber: Int, maxValue: UInt32) -> Int {
-        var result = Int(arc4random_uniform(maxValue))
-        if prevNumber != -1 {
-            while result == prevNumber {
-                result = Int(arc4random_uniform(7))
-            }
-        }
-        return result
-    }
+
 }
 
