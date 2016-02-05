@@ -38,18 +38,25 @@ class ViewController: UIViewController {
     }
     
     func showRandomBG() {
-        blurEffectView.removeFromSuperview()
-        imgNumber = getAnotherRandomNumber(imgNumber, maxValue: 7)
-        let bgImage = UIImage(named: "Pic\(imgNumber)")
-        backgroundImageView.image = bgImage
-        
-        otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 7)
-        otmazaTextLabel.text = content[otmazaNumber]
-        
+        setImage()
+        setOtmaza()
         setBlur()
     }
     
+    func setImage() {
+        imgNumber = getAnotherRandomNumber(imgNumber, maxValue: 7)
+        let bgImage = UIImage(named: "Pic\(imgNumber)")
+        backgroundImageView.image = bgImage
+    }
+    
+    func setOtmaza() {
+        otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 7)
+        otmazaTextLabel.text = content[otmazaNumber]
+        
+    }
+    
     func setBlur() {
+        blurEffectView.removeFromSuperview()
         blurAlpha = 0.0
         blurTimer.invalidate()
         blurTimer = NSTimer.scheduledTimerWithTimeInterval(blurTimerPeriod, target: self, selector: "changeBlur", userInfo: nil, repeats: true)
@@ -63,8 +70,7 @@ class ViewController: UIViewController {
             return
         }
         blurEffectView.removeFromSuperview()
-        let blurEffect = UIBlurEffect(style: .Dark)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
         blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         blurEffectView.frame = view.bounds
         blurEffectView.alpha = blurAlpha
