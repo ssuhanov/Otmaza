@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         backgroundImageView.addSubview(blurEffectView)
     }
 
-    // MARK: - next Otmaza
+    // MARK: - Next Otmaza
     @IBAction func nextOtmazaButton(sender: AnyObject) {
         showRandomBG()
     }
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         var result = Int(arc4random_uniform(maxValue))
         if prevNumber != -1 {
             while result == prevNumber {
-                result = Int(arc4random_uniform(7))
+                result = Int(arc4random_uniform(maxValue))
             }
         }
         return result
