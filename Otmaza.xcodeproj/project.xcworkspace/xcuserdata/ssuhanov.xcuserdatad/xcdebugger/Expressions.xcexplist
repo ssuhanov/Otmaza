@@ -3,6 +3,17 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "ViewController.setOtmaza() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "otmazaNumber">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewDidLoad() -&gt; ():ViewController.swift">
+      </ContextState>
+      <ContextState
          contextName = "ViewController.changeBlur() -&gt; ():ViewController.swift">
          <PersistentStrings>
             <PersistentString
