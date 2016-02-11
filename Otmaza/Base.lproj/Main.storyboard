@@ -21,8 +21,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="or1-T1-be0">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="There is some text in label. It should be in two rows at minimum. Or more rows. I want to write more text here." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xg-Tc-6lP">
-                                <rect key="frame" x="20" y="155" width="560" height="290"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There is some text in label. It should be in two rows at minimum. Or more rows. I want to write more text here." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xg-Tc-6lP">
+                                <rect key="frame" x="20" y="76" width="560" height="418"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -37,30 +37,20 @@
                                     <action selector="nextOtmazaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXI-AS-Xgh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="А теперь досчитайте до десяти. Глубокий вдох-выдох. И смело говорите заказчику:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0z-fC-iMc">
-                                <rect key="frame" x="20" y="85" width="560" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e9n-0E-yf6" secondAttribute="bottom" constant="60" id="5my-9W-JW9">
-                                <variation key="heightClass=compact" constant="28"/>
-                            </constraint>
-                            <constraint firstItem="5Xg-Tc-6lP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="941-kL-Zfz"/>
-                            <constraint firstItem="h0z-fC-iMc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CTY-mY-mD6"/>
-                            <constraint firstItem="h0z-fC-iMc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="65" id="E4e-eK-cNb">
+                            <constraint firstItem="5Xg-Tc-6lP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2a9-ab-Reb"/>
+                            <constraint firstItem="e9n-0E-yf6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2uZ-h1-v4R"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e9n-0E-yf6" secondAttribute="bottom" constant="60" id="FXn-iA-bxo">
                                 <variation key="heightClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="or1-T1-be0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="KQZ-wV-Hrr"/>
                             <constraint firstItem="or1-T1-be0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L5D-fW-w4S"/>
-                            <constraint firstItem="e9n-0E-yf6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PtK-7T-hh6"/>
+                            <constraint firstItem="5Xg-Tc-6lP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MIY-AK-JQZ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="5Xg-Tc-6lP" secondAttribute="bottom" constant="106" id="W14-aS-HFS"/>
                             <constraint firstItem="or1-T1-be0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dFg-Nu-bFL"/>
-                            <constraint firstItem="5Xg-Tc-6lP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="pj9-Nc-FMU"/>
-                            <constraint firstItem="h0z-fC-iMc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="xTQ-Y9-F6R"/>
-                            <constraint firstItem="5Xg-Tc-6lP" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xsJ-IG-toT"/>
+                            <constraint firstItem="5Xg-Tc-6lP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="hlK-W1-RlZ"/>
                             <constraint firstAttribute="trailing" secondItem="or1-T1-be0" secondAttribute="trailing" id="yhT-YZ-AZE"/>
                         </constraints>
                     </view>

@@ -60,9 +60,42 @@ class ViewController: UIViewController {
     }
     
     func setOtmaza() {
-        otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 7)
-        otmazaTextLabel.text = content[otmazaNumber]
+        otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 400)
+        if var otmaza = getOtmaza(otmazaNumber) {
+            while otmaza.containsString("Клиент ничего не заподозрит") || otmaza.containsString("Не трать время еще и на генерирование отмазки") || otmaza.containsString("Генератор отмазок поможет выйти сухим из воды") {
+                otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 400)
+                if let anewOtmaza = getOtmaza(otmazaNumber) {
+                    otmaza = anewOtmaza
+                } else {
+                    break
+                }
+            }
+            print(otmazaNumber)
+            otmazaTextLabel.text = otmaza
+        } else {
+            otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 7)
+            otmazaTextLabel.text = content[otmazaNumber]
+        }
+    }
+    
+    func getOtmaza(number: Int) -> String? {
+        guard let url = NSURL(string: "http://copout.me/get-excuse/\(number)"),
+            let myData = NSData(contentsOfURL: url),
+            let myString = String(data: myData, encoding: NSUTF8StringEncoding) else {
+                return nil
+        }
         
+        let resultStart = myString.rangeOfString("<meta property=\"og:description\" content=\"")
+        let resultFinish = myString.rangeOfString("<meta property=\"og:url\" content=\"")
+        
+        guard let myRangeStart = resultStart,
+            let myRangeFinish = resultFinish else {
+                return nil
+        }
+        
+        let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex.predecessor().predecessor().predecessor()].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"")
+
+        return resultString
     }
     
     func getAnotherRandomNumber(prevNumber: Int, maxValue: UInt32) -> Int {
