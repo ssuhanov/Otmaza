@@ -105,7 +105,7 @@ class ViewController: UIViewController {
         }
         otmazaNumber = newOtmazaNumber
         print(otmazaNumber)
-        otmazaTextLabel.text = otmaza
+        otmazaTextLabel.text = otmaza.uppercaseString
     }
     
     func getOtmaza(number: Int) -> String {
