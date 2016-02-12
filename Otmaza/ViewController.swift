@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     
     var imgNumber = -1
     var otmazaNumber = -1
+    
+    let maxOtmazaNumber: UInt32 = 612
 
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var otmazaTextLabel: UILabel!
@@ -60,16 +62,19 @@ class ViewController: UIViewController {
     }
     
     func setOtmaza() {
-        otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 400)
-        if var otmaza = getOtmaza(otmazaNumber) {
-            while otmaza.containsString("Клиент ничего не заподозрит") || otmaza.containsString("Не трать время еще и на генерирование отмазки") || otmaza.containsString("Генератор отмазок поможет выйти сухим из воды") {
-                otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 400)
-                if let anewOtmaza = getOtmaza(otmazaNumber) {
+        var newOtmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: maxOtmazaNumber)
+        if var otmaza = getOtmaza(newOtmazaNumber) {
+            while otmaza.isEmpty {
+                newOtmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: maxOtmazaNumber)
+                if let anewOtmaza = getOtmaza(newOtmazaNumber) {
                     otmaza = anewOtmaza
                 } else {
+                    otmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: 7)
+                    otmazaTextLabel.text = content[otmazaNumber]
                     break
                 }
             }
+            otmazaNumber = newOtmazaNumber
             print(otmazaNumber)
             otmazaTextLabel.text = otmaza
         } else {
@@ -85,15 +90,15 @@ class ViewController: UIViewController {
                 return nil
         }
         
-        let resultStart = myString.rangeOfString("<meta property=\"og:description\" content=\"")
-        let resultFinish = myString.rangeOfString("<meta property=\"og:url\" content=\"")
+        let resultStart = myString.rangeOfString("<blockquote>")
+        let resultFinish = myString.rangeOfString("</blockquote>")
         
         guard let myRangeStart = resultStart,
             let myRangeFinish = resultFinish else {
-                return nil
+                return ""
         }
         
-        let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex.predecessor().predecessor().predecessor()].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"")
+        let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
 
         return resultString
     }
