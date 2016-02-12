@@ -3,10 +3,10 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "ViewController.changeBlur() -&gt; ():ViewController.swift">
+         contextName = "ViewController.findInCoreData(Int) -&gt; String?:ViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "blurAlpha">
+               value = "elementOfOtmazas.id">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -15,6 +15,14 @@
          <PersistentStrings>
             <PersistentString
                value = "startIndex &gt; finishIndex">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.changeBlur() -&gt; ():ViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "blurAlpha">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
