@@ -14,7 +14,6 @@
 		B2F1D1371C6492D9001F56A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D1351C6492D9001F56A7 /* Main.storyboard */; };
 		B2F1D1391C6492D9001F56A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D1381C6492D9001F56A7 /* Assets.xcassets */; };
 		B2F1D13C1C6492D9001F56A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D13A1C6492D9001F56A7 /* LaunchScreen.storyboard */; };
-		B2F1D1441C64ADF8001F56A7 /* Content.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D1431C64ADF8001F56A7 /* Content.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		B2F1D1381C6492D9001F56A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2F1D13B1C6492D9001F56A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F1D13D1C6492D9001F56A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2F1D1431C64ADF8001F56A7 /* Content.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Content.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +61,6 @@
 				B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */,
 				B2F1D1331C6492D8001F56A7 /* ViewController.swift */,
 				B2B023411C6E54FA00C88A09 /* Otmaza.swift */,
-				B2F1D1431C64ADF8001F56A7 /* Content.plist */,
 				B2F1D1351C6492D9001F56A7 /* Main.storyboard */,
 				B2F1D1381C6492D9001F56A7 /* Assets.xcassets */,
 				B2F1D13A1C6492D9001F56A7 /* LaunchScreen.storyboard */,
@@ -134,7 +131,6 @@
 			files = (
 				B2F1D13C1C6492D9001F56A7 /* LaunchScreen.storyboard in Resources */,
 				B2F1D1391C6492D9001F56A7 /* Assets.xcassets in Resources */,
-				B2F1D1441C64ADF8001F56A7 /* Content.plist in Resources */,
 				B2F1D1371C6492D9001F56A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

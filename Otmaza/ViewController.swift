@@ -9,14 +9,14 @@
 import UIKit
 import CoreData
 
+let kRunsCount = "kRunsCount"
+
 class ViewController: UIViewController {
     var blurTimer = NSTimer()
     let blurTimerPeriod = 0.01
     
     var blurEffectView = UIVisualEffectView()
     var blurAlpha: CGFloat = 0.0
-    
-    var content = [String]()
     
     var imgNumber = -1
     var otmazaNumber = -1
@@ -28,13 +28,30 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let fileUrl = NSBundle.mainBundle().URLForResource("Content", withExtension: "plist") {
-            if let array = NSArray(contentsOfURL: fileUrl) {
-                content = array as! [String]
-            }
-        }
+        processFirstRun()
         setBlur()
         showRandomBackgroundAndOtmaza()
+    }
+    
+    func processFirstRun() {
+        var runsCount = NSUserDefaults.standardUserDefaults().integerForKey(kRunsCount)
+        NSUserDefaults.standardUserDefaults().setInteger(++runsCount, forKey: kRunsCount)
+        if runsCount == 1 {
+            fillSomeOtmazasToCoreData()
+        }
+    }
+    
+    func fillSomeOtmazasToCoreData() {
+        saveToCoreData(386, text: "С УТРА, Когда чистил зубы, выдавил много пасты и долго запихивал её обратно")
+        saveToCoreData(589, text: "Лень - это гармония, когда душа не хочет, а тело не делает.")
+        saveToCoreData(137, text: "Я сейчас не в стране, мне не очень удобно разговаривать. Вернусь через 2 недели, сразу же позвоню вам сам")
+        saveToCoreData(600, text: "Я опоздал, потому что сломался холодильник, из которого вытекла вода и затопила будильник")
+        saveToCoreData(501, text: "Я опоздал на работу потому, что кто-то ночью закрыл в подъезде закон притяжения. Пришлось ждать, пока его снова откроют.")
+        saveToCoreData(8, text: "Ворона украла флешку")
+        saveToCoreData(115, text: "Установила последнее обновление Линукса - теперь ничего не работает. Да-да, и интернет не работает. И браузеры. Буду весь день разбираться.")
+        saveToCoreData(438, text: "в google maps слетела метка и я пришел не туда, позвонил в мчс и меня доставили прямо к дверям офиса, слава шойгу!")
+        saveToCoreData(341, text: "Системная ошибка в нашей системе. Систематизируем правки системы. А что вы хотели, автоматизация, роботы!")
+        saveToCoreData(344, text: "мЕНЯ СРОЧНО ВЫЗЫВАЕТ УМИРАЮЩАЯ ТЕТУШКА ИЗ оДЕССЫ ПО ПОВОДУ НАСЛЕДСТВА. изВИНИТЕ МЕНЯ, НО РОДСТВЕННИКИ МНЕ ДОРОЖЕ!!!")
     }
     
     @IBAction func nextOtmazaButton(sender: AnyObject) {
