@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2B023331C6E536300C88A09 /* Otmaza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */; };
+		B2B023431C6E54FA00C88A09 /* Otmaza.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B023411C6E54FA00C88A09 /* Otmaza.swift */; };
 		B2F1D1321C6492D8001F56A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */; };
 		B2F1D1341C6492D8001F56A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1D1331C6492D8001F56A7 /* ViewController.swift */; };
 		B2F1D1371C6492D9001F56A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D1351C6492D9001F56A7 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2B023321C6E536300C88A09 /* Otmaza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Otmaza.xcdatamodel; sourceTree = "<group>"; };
+		B2B023411C6E54FA00C88A09 /* Otmaza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Otmaza.swift; sourceTree = "<group>"; };
 		B2F1D12E1C6492D8001F56A7 /* Otmaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otmaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F1D1331C6492D8001F56A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,11 +62,13 @@
 			children = (
 				B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */,
 				B2F1D1331C6492D8001F56A7 /* ViewController.swift */,
+				B2B023411C6E54FA00C88A09 /* Otmaza.swift */,
 				B2F1D1431C64ADF8001F56A7 /* Content.plist */,
 				B2F1D1351C6492D9001F56A7 /* Main.storyboard */,
 				B2F1D1381C6492D9001F56A7 /* Assets.xcassets */,
 				B2F1D13A1C6492D9001F56A7 /* LaunchScreen.storyboard */,
 				B2F1D13D1C6492D9001F56A7 /* Info.plist */,
+				B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */,
 			);
 			path = Otmaza;
 			sourceTree = "<group>";
@@ -142,6 +148,8 @@
 			files = (
 				B2F1D1341C6492D8001F56A7 /* ViewController.swift in Sources */,
 				B2F1D1321C6492D8001F56A7 /* AppDelegate.swift in Sources */,
+				B2B023431C6E54FA00C88A09 /* Otmaza.swift in Sources */,
+				B2B023331C6E536300C88A09 /* Otmaza.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +299,22 @@
 				B2F1D1421C6492D9001F56A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B2B023321C6E536300C88A09 /* Otmaza.xcdatamodel */,
+			);
+			currentVersion = B2B023321C6E536300C88A09 /* Otmaza.xcdatamodel */;
+			path = Otmaza.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B2F1D1261C6492D8001F56A7 /* Project object */;
 }
