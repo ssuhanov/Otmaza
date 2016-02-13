@@ -37,6 +37,16 @@
                                     <action selector="nextOtmazaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXI-AS-Xgh"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3S-vm-MTa">
+                                <rect key="frame" x="252" y="565" width="96" height="27"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <state key="normal" title="http://copout.me">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openUrlButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yk3-nG-j6f"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -45,10 +55,12 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e9n-0E-yf6" secondAttribute="bottom" constant="60" id="FXn-iA-bxo">
                                 <variation key="heightClass=compact" constant="30"/>
                             </constraint>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c3S-vm-MTa" secondAttribute="bottom" constant="8" id="IyK-At-2yR"/>
                             <constraint firstItem="or1-T1-be0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="KQZ-wV-Hrr"/>
                             <constraint firstItem="or1-T1-be0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L5D-fW-w4S"/>
                             <constraint firstItem="5Xg-Tc-6lP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MIY-AK-JQZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5Xg-Tc-6lP" secondAttribute="bottom" constant="106" id="W14-aS-HFS"/>
+                            <constraint firstItem="c3S-vm-MTa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bbF-ix-Ywg"/>
                             <constraint firstItem="or1-T1-be0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dFg-Nu-bFL"/>
                             <constraint firstItem="5Xg-Tc-6lP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="56" id="hlK-W1-RlZ"/>
                             <constraint firstAttribute="trailing" secondItem="or1-T1-be0" secondAttribute="trailing" id="yhT-YZ-AZE"/>

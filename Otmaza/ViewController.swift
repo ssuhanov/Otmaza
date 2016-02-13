@@ -58,6 +58,12 @@ class ViewController: UIViewController {
         showRandomBackgroundAndOtmaza()
     }
     
+    @IBAction func openUrlButton(sender: AnyObject) {
+        if let url = NSURL(string: "http://copout.me") {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
     func showRandomBackgroundAndOtmaza() {
         setImage()
         setOtmaza()
@@ -150,33 +156,33 @@ class ViewController: UIViewController {
                 print(error)
                 return nil
             }
+        }
+        return nil
     }
-    return nil
-}
-
-func saveToCoreData(id: Int, text: String) {
-    if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-        let otmaza: Otmaza = NSEntityDescription.insertNewObjectForEntityForName("Otmaza", inManagedObjectContext: managedObjectContext) as! Otmaza
-        otmaza.id = id
-        otmaza.text = text
-        
-        do {
-            try managedObjectContext.save()
-        } catch {
-            print(error)
+    
+    func saveToCoreData(id: Int, text: String) {
+        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
+            let otmaza: Otmaza = NSEntityDescription.insertNewObjectForEntityForName("Otmaza", inManagedObjectContext: managedObjectContext) as! Otmaza
+            otmaza.id = id
+            otmaza.text = text
+            
+            do {
+                try managedObjectContext.save()
+            } catch {
+                print(error)
+            }
         }
     }
-}
-
-func getAnotherRandomNumber(prevNumber: Int, maxValue: UInt32) -> Int {
-    var result = Int(arc4random_uniform(maxValue))
-    if prevNumber != -1 {
-        while result == prevNumber || result == otmazaNumber {
-            result = Int(arc4random_uniform(maxValue))
+    
+    func getAnotherRandomNumber(prevNumber: Int, maxValue: UInt32) -> Int {
+        var result = Int(arc4random_uniform(maxValue))
+        if prevNumber != -1 {
+            while result == prevNumber || result == otmazaNumber {
+                result = Int(arc4random_uniform(maxValue))
+            }
         }
+        return result
     }
-    return result
-}
-
+    
 }
 
