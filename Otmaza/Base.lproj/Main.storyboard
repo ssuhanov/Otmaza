@@ -55,7 +55,9 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e9n-0E-yf6" secondAttribute="bottom" constant="60" id="FXn-iA-bxo">
                                 <variation key="heightClass=compact" constant="30"/>
                             </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c3S-vm-MTa" secondAttribute="bottom" constant="8" id="IyK-At-2yR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c3S-vm-MTa" secondAttribute="bottom" constant="8" id="IyK-At-2yR">
+                                <variation key="heightClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="or1-T1-be0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="KQZ-wV-Hrr"/>
                             <constraint firstItem="or1-T1-be0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L5D-fW-w4S"/>
                             <constraint firstItem="5Xg-Tc-6lP" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="MIY-AK-JQZ"/>
