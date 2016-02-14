@@ -29,6 +29,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(spinner)
+        spinner.hidesWhenStopped = true
+        
         processFirstRun()
         setBlur()
         showRandomBackgroundAndOtmaza()
@@ -73,7 +77,7 @@ class ViewController: UIViewController {
                 self.setImage()
                 self.updateBlur()
                 self.setOtmaza()
-                self.hideActivityIndicator()
+                self.spinner.stopAnimating()
             }
         }
     }
@@ -129,14 +133,7 @@ class ViewController: UIViewController {
         let kScreenWidth = kScreenSize.width
         let kScreenHeight = kScreenSize.height
         spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
-        view.addSubview(spinner)
         spinner.startAnimating()
-    }
-    
-    func hideActivityIndicator() {
-        spinner.stopAnimating()
-        spinner.hidesWhenStopped = true
-//        spinner.removeFromSuperview()
     }
     
     func getOtmaza(number: Int) -> String {
