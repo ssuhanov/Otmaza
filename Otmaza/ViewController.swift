@@ -32,6 +32,11 @@ class ViewController: UIViewController {
         
         view.addSubview(spinner)
         spinner.hidesWhenStopped = true
+//        let kScreenSize = UIScreen.mainScreen().applicationFrame.size
+        let kScreenSize = view.bounds.size
+        let kScreenWidth = kScreenSize.width
+        let kScreenHeight = kScreenSize.height
+        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         
         processFirstRun()
         setBlur()
@@ -71,7 +76,8 @@ class ViewController: UIViewController {
     }
     
     func showRandomBackgroundAndOtmaza() {
-        showActivityIndicator()
+        otmazaTextLabel.text = ""
+        spinner.startAnimating()
         AppDelegate().operationQueue.addOperationWithBlock() {
             NSOperationQueue.mainQueue().addOperationWithBlock() {
                 self.setImage()
@@ -124,16 +130,6 @@ class ViewController: UIViewController {
         otmazaNumber = newOtmazaNumber
 //        print(otmazaNumber)
         otmazaTextLabel.text = otmaza.uppercaseString
-    }
-    
-    func showActivityIndicator() {
-        otmazaTextLabel.text = ""
-        //        let kScreenSize = UIScreen.mainScreen().applicationFrame.size
-        let kScreenSize = view.bounds.size
-        let kScreenWidth = kScreenSize.width
-        let kScreenHeight = kScreenSize.height
-        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
-        spinner.startAnimating()
     }
     
     func getOtmaza(number: Int) -> String {
