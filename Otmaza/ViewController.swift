@@ -60,6 +60,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openUrlButton(sender: AnyObject) {
+//        if let url = NSURL(string: "http://copout.me/get-excuse/\(otmazaNumber)") {
         if let url = NSURL(string: "http://copout.me") {
             UIApplication.sharedApplication().openURL(url)
         }
