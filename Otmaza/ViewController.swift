@@ -14,6 +14,7 @@ let kRunsCount = "kRunsCount"
 class ViewController: UIViewController {
     var blurTimer = NSTimer()
     let blurTimerPeriod = 0.01
+    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     var blurEffectView = UIVisualEffectView()
     var blurAlpha: CGFloat = 0.0
@@ -65,9 +66,15 @@ class ViewController: UIViewController {
     }
     
     func showRandomBackgroundAndOtmaza() {
-        setImage()
-        setOtmaza()
-        updateBlur()
+        showActivityIndicator()
+        AppDelegate().operationQueue.addOperationWithBlock() {
+            NSOperationQueue.mainQueue().addOperationWithBlock() {
+                self.setImage()
+                self.updateBlur()
+                self.setOtmaza()
+                self.hideActivityIndicator()
+            }
+        }
     }
     
     // MARK: - Image and blur
@@ -110,8 +117,25 @@ class ViewController: UIViewController {
             otmaza = getOtmaza(newOtmazaNumber)
         }
         otmazaNumber = newOtmazaNumber
-        print(otmazaNumber)
+//        print(otmazaNumber)
         otmazaTextLabel.text = otmaza.uppercaseString
+    }
+    
+    func showActivityIndicator() {
+        otmazaTextLabel.text = ""
+        //        let kScreenSize = UIScreen.mainScreen().applicationFrame.size
+        let kScreenSize = view.bounds.size
+        let kScreenWidth = kScreenSize.width
+        let kScreenHeight = kScreenSize.height
+        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
+        view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    func hideActivityIndicator() {
+        spinner.stopAnimating()
+        spinner.hidesWhenStopped = true
+//        spinner.removeFromSuperview()
     }
     
     func getOtmaza(number: Int) -> String {
