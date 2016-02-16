@@ -39,7 +39,7 @@ class ViewController: UIViewController {
         
         processFirstRun()
         performSelector("setBlur", withObject: nil, afterDelay: 0.01)
-        showRandomBackgroundAndOtmaza()
+        performSelector("showRandomBackgroundAndOtmaza", withObject: nil, afterDelay: 0.02)
     }
     
     func processFirstRun() {
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     
     func showRandomBackgroundAndOtmaza() {
         otmazaTextLabel.text = ""
-        spinner.startAnimating()
+        showSpinner()
         AppDelegate().operationQueue.addOperationWithBlock() {
             NSOperationQueue.mainQueue().addOperationWithBlock() {
                 self.setImage()
@@ -87,6 +87,13 @@ class ViewController: UIViewController {
         }
     }
     
+    func showSpinner() {
+        let kScreenSize = view.bounds.size
+        let kScreenWidth = kScreenSize.width
+        let kScreenHeight = kScreenSize.height
+        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
+        spinner.startAnimating()
+    }
     // MARK: - Image and blur
     func setBlur() {
         blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
