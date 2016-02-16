@@ -32,10 +32,6 @@ class ViewController: UIViewController {
         
         view.addSubview(spinner)
         spinner.hidesWhenStopped = true
-        let kScreenSize = view.bounds.size
-        let kScreenWidth = kScreenSize.width
-        let kScreenHeight = kScreenSize.height
-        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         
         processFirstRun()
         performSelector("setBlur", withObject: nil, afterDelay: 0.01)
@@ -88,7 +84,7 @@ class ViewController: UIViewController {
     }
     
     func showSpinner() {
-        let kScreenSize = view.bounds.size
+        let kScreenSize = view.frame.size
         let kScreenWidth = kScreenSize.width
         let kScreenHeight = kScreenSize.height
         spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
