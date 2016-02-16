@@ -32,14 +32,13 @@ class ViewController: UIViewController {
         
         view.addSubview(spinner)
         spinner.hidesWhenStopped = true
-//        let kScreenSize = UIScreen.mainScreen().applicationFrame.size
         let kScreenSize = view.bounds.size
         let kScreenWidth = kScreenSize.width
         let kScreenHeight = kScreenSize.height
         spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         
         processFirstRun()
-        setBlur()
+        performSelector("setBlur", withObject: nil, afterDelay: 0.01)
         showRandomBackgroundAndOtmaza()
     }
     
@@ -91,7 +90,7 @@ class ViewController: UIViewController {
     // MARK: - Image and blur
     func setBlur() {
         blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
-        blurEffectView.frame = view.bounds
+        blurEffectView.frame = view.frame
         blurEffectView.alpha = 0.0
         backgroundImageView.addSubview(blurEffectView)
     }
