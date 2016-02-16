@@ -52,16 +52,16 @@ class ViewController: UIViewController {
     }
     
     func fillSomeOtmazasToCoreData() {
-        saveToCoreData(386, text: "С УТРА, Когда чистил зубы, выдавил много пасты и долго запихивал её обратно")
-        saveToCoreData(589, text: "Лень - это гармония, когда душа не хочет, а тело не делает.")
-        saveToCoreData(137, text: "Я сейчас не в стране, мне не очень удобно разговаривать. Вернусь через 2 недели, сразу же позвоню вам сам")
-        saveToCoreData(600, text: "Я опоздал, потому что сломался холодильник, из которого вытекла вода и затопила будильник")
-        saveToCoreData(501, text: "Я опоздал на работу потому, что кто-то ночью закрыл в подъезде закон притяжения. Пришлось ждать, пока его снова откроют.")
-        saveToCoreData(8, text: "Ворона украла флешку")
-        saveToCoreData(115, text: "Установила последнее обновление Линукса - теперь ничего не работает. Да-да, и интернет не работает. И браузеры. Буду весь день разбираться.")
-        saveToCoreData(438, text: "в google maps слетела метка и я пришел не туда, позвонил в мчс и меня доставили прямо к дверям офиса, слава шойгу!")
-        saveToCoreData(341, text: "Системная ошибка в нашей системе. Систематизируем правки системы. А что вы хотели, автоматизация, роботы!")
-        saveToCoreData(344, text: "мЕНЯ СРОЧНО ВЫЗЫВАЕТ УМИРАЮЩАЯ ТЕТУШКА ИЗ оДЕССЫ ПО ПОВОДУ НАСЛЕДСТВА. изВИНИТЕ МЕНЯ, НО РОДСТВЕННИКИ МНЕ ДОРОЖЕ!!!")
+        saveOtmazaToCoreData(386, text: "С УТРА, Когда чистил зубы, выдавил много пасты и долго запихивал её обратно")
+        saveOtmazaToCoreData(589, text: "Лень - это гармония, когда душа не хочет, а тело не делает.")
+        saveOtmazaToCoreData(137, text: "Я сейчас не в стране, мне не очень удобно разговаривать. Вернусь через 2 недели, сразу же позвоню вам сам")
+        saveOtmazaToCoreData(600, text: "Я опоздал, потому что сломался холодильник, из которого вытекла вода и затопила будильник")
+        saveOtmazaToCoreData(501, text: "Я опоздал на работу потому, что кто-то ночью закрыл в подъезде закон притяжения. Пришлось ждать, пока его снова откроют.")
+        saveOtmazaToCoreData(8, text: "Ворона украла флешку")
+        saveOtmazaToCoreData(115, text: "Установила последнее обновление Линукса - теперь ничего не работает. Да-да, и интернет не работает. И браузеры. Буду весь день разбираться.")
+        saveOtmazaToCoreData(438, text: "в google maps слетела метка и я пришел не туда, позвонил в мчс и меня доставили прямо к дверям офиса, слава шойгу!")
+        saveOtmazaToCoreData(341, text: "Системная ошибка в нашей системе. Систематизируем правки системы. А что вы хотели, автоматизация, роботы!")
+        saveOtmazaToCoreData(344, text: "мЕНЯ СРОЧНО ВЫЗЫВАЕТ УМИРАЮЩАЯ ТЕТУШКА ИЗ оДЕССЫ ПО ПОВОДУ НАСЛЕДСТВА. изВИНИТЕ МЕНЯ, НО РОДСТВЕННИКИ МНЕ ДОРОЖЕ!!!")
     }
     
     @IBAction func nextOtmazaButton(sender: AnyObject) {
@@ -128,13 +128,12 @@ class ViewController: UIViewController {
             otmaza = getOtmaza(newOtmazaNumber)
         }
         otmazaNumber = newOtmazaNumber
-//        print(otmazaNumber)
         otmazaTextLabel.text = otmaza.uppercaseString
     }
     
     func getOtmaza(number: Int) -> String {
         // let find otmaza in core data first
-        if let resultFromCoreData = findInCoreData(number) {
+        if let resultFromCoreData = findOtmazaInCoreData(number) {
             return resultFromCoreData
         }
         
@@ -149,26 +148,28 @@ class ViewController: UIViewController {
         
         guard let myRangeStart = resultStart,
             let myRangeFinish = resultFinish else {
-                saveToCoreData(number, text: "")
+                saveOtmazaToCoreData(number, text: "")
                 return ""
         }
         
         let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
         
-        saveToCoreData(number, text: resultString)
+        saveOtmazaToCoreData(number, text: resultString)
         return resultString
     }
     
-    func findInCoreData(id: Int) -> String? {
+    func findOtmazaInCoreData(id: Int) -> String? {
         let fetchRequest = NSFetchRequest(entityName: "Otmaza")
+        let predicate = NSPredicate(format: "id == %i", id)
+        fetchRequest.predicate = predicate
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext         {
             do {
                 let results = try managedObjectContext.executeFetchRequest(fetchRequest)
                 let otmazas = results as! [Otmaza]
-                for elementOfOtmazas in otmazas {
-                    if elementOfOtmazas.id == id {
-                        return elementOfOtmazas.text
-                    }
+                if otmazas.count > 0 {
+                    return otmazas[0].text
+                } else {
+                    return ""
                 }
             } catch {
                 print(error)
@@ -178,7 +179,7 @@ class ViewController: UIViewController {
         return nil
     }
     
-    func saveToCoreData(id: Int, text: String) {
+    func saveOtmazaToCoreData(id: Int, text: String) {
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
             let otmaza: Otmaza = NSEntityDescription.insertNewObjectForEntityForName("Otmaza", inManagedObjectContext: managedObjectContext) as! Otmaza
             otmaza.id = id
