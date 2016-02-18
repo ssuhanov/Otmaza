@@ -12,12 +12,10 @@ import CoreData
 let kRunsCount = "kRunsCount"
 
 class ViewController: UIViewController {
-    var blurTimer = NSTimer()
-    let blurTimerPeriod = 0.01
     let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     var blurEffectView = UIVisualEffectView()
-    var blurAlpha: CGFloat = 0.0
+    let blurTimer: NSTimeInterval = 2.0
     
     var imgNumber = -1
     var otmazaNumber = -1
@@ -73,10 +71,10 @@ class ViewController: UIViewController {
     func showRandomBackgroundAndOtmaza() {
         otmazaTextLabel.text = ""
         showSpinner()
+        setImage()
+        updateBlur()
         AppDelegate().operationQueue.addOperationWithBlock() {
             NSOperationQueue.mainQueue().addOperationWithBlock() {
-                self.setImage()
-                self.updateBlur()
                 self.setOtmaza()
                 self.spinner.stopAnimating()
             }
@@ -105,20 +103,11 @@ class ViewController: UIViewController {
     }
     
     func updateBlur() {
-        blurAlpha = 0.0
-        blurTimer.invalidate()
-        blurTimer = NSTimer.scheduledTimerWithTimeInterval(blurTimerPeriod, target: self, selector: "changeBlur", userInfo: nil, repeats: true)
-    }
-    
-    func changeBlur() {
-        blurAlpha += 0.01
-        if blurAlpha > 1.0 {
-            blurAlpha = 0.0
-            blurTimer.invalidate()
-            return
-        }
+        blurEffectView.alpha = 0.0
         blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
-        blurEffectView.alpha = blurAlpha
+        UIView.animateWithDuration(blurTimer) { () -> Void in
+            self.blurEffectView.alpha = 1.0
+        }
     }
     
     // MARK: - Find otmaza
@@ -171,7 +160,7 @@ class ViewController: UIViewController {
                 if otmazas.count > 0 {
                     return otmazas[0].text
                 } else {
-                    return ""
+                    return nil
                 }
             } catch {
                 print(error)
