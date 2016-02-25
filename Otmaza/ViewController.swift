@@ -73,11 +73,15 @@ class ViewController: UIViewController {
         showSpinner()
         setImage()
         updateBlur()
-        AppDelegate().operationQueue.addOperationWithBlock() {
-            NSOperationQueue.mainQueue().addOperationWithBlock() {
-                self.setOtmaza()
+        
+        let mainQ = dispatch_get_main_queue()
+        let newQ = dispatch_queue_create("newQ", DISPATCH_QUEUE_CONCURRENT)
+        dispatch_async(newQ) { () -> Void in
+            let currOtmaza = self.setOtmaza()
+            dispatch_async(mainQ, { () -> Void in
+                self.otmazaTextLabel.text = currOtmaza
                 self.spinner.stopAnimating()
-            }
+            })
         }
     }
     
@@ -88,6 +92,7 @@ class ViewController: UIViewController {
         spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         spinner.startAnimating()
     }
+    
     // MARK: - Image and blur
     func setBlur() {
         blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
@@ -111,7 +116,7 @@ class ViewController: UIViewController {
     }
     
     // MARK: - Find otmaza
-    func setOtmaza() {
+    func setOtmaza() -> String {
         var newOtmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: maxOtmazaNumber)
         var otmaza = getOtmaza(newOtmazaNumber)
         while otmaza.isEmpty {
@@ -119,7 +124,7 @@ class ViewController: UIViewController {
             otmaza = getOtmaza(newOtmazaNumber)
         }
         otmazaNumber = newOtmazaNumber
-        otmazaTextLabel.text = otmaza.uppercaseString
+        return otmaza.uppercaseString
     }
     
     func getOtmaza(number: Int) -> String {
