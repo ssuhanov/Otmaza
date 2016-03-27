@@ -32,13 +32,14 @@ class ViewController: UIViewController {
         spinner.hidesWhenStopped = true
         
         processFirstRun()
-        performSelector("setBlur", withObject: nil, afterDelay: 0.01)
-        performSelector("showRandomBackgroundAndOtmaza", withObject: nil, afterDelay: 0.02)
+        performSelector(#selector(ViewController.setBlur), withObject: nil, afterDelay: 0.01)
+        performSelector(#selector(ViewController.showRandomBackgroundAndOtmaza), withObject: nil, afterDelay: 0.02)
     }
     
     func processFirstRun() {
         var runsCount = NSUserDefaults.standardUserDefaults().integerForKey(kRunsCount)
-        NSUserDefaults.standardUserDefaults().setInteger(++runsCount, forKey: kRunsCount)
+        runsCount += 1
+        NSUserDefaults.standardUserDefaults().setInteger(runsCount, forKey: kRunsCount)
         if runsCount == 1 {
             fillSomeOtmazasToCoreData()
         }
@@ -144,7 +145,7 @@ class ViewController: UIViewController {
         
         guard let myRangeStart = resultStart,
             let myRangeFinish = resultFinish else {
-                saveOtmazaToCoreData(number, text: "")
+//                saveOtmazaToCoreData(number, text: "")
                 return ""
         }
         
