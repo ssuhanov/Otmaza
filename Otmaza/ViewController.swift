@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var otmazaTextLabel: UILabel!
+    @IBOutlet weak var nextOtmazaButtonOutlet: UIButton!
+    @IBOutlet weak var openURLButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +83,7 @@ class ViewController: UIViewController {
             let currOtmaza = self.setOtmaza()
             dispatch_async(mainQ, { () -> Void in
                 self.otmazaTextLabel.text = currOtmaza
-                self.spinner.stopAnimating()
+                self.stopSpinner()
             })
         }
     }
@@ -92,6 +94,17 @@ class ViewController: UIViewController {
         let kScreenHeight = kScreenSize.height
         spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         spinner.startAnimating()
+        doButtonsEnabled(false)
+    }
+    
+    func stopSpinner() {
+        spinner.stopAnimating()
+        doButtonsEnabled(true)
+    }
+    
+    func doButtonsEnabled(enabled: Bool) {
+        nextOtmazaButtonOutlet.enabled = enabled
+        openURLButtonOutlet.enabled = enabled
     }
     
     // MARK: - Image and blur
