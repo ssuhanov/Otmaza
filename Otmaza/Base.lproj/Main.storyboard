@@ -25,6 +25,9 @@
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                </variation>
                             </label>
                             <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9n-0E-yf6">
                                 <rect key="frame" x="236" y="502" width="128" height="38"/>
@@ -32,6 +35,9 @@
                                 <state key="normal" title="Еще отмазку">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="nextOtmazaButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXI-AS-Xgh"/>
                                 </connections>
@@ -44,6 +50,9 @@
                                 </state>
                                 <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="152" y="565" width="96" height="27"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 </variation>
                                 <connections>
                                     <action selector="openUrlButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yk3-nG-j6f"/>
