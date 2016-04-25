@@ -20,10 +20,12 @@ class ViewController: UIViewController {
     var imgNumber = -1
     var otmazaNumber = -1
     
-    let maxOtmazaNumber: UInt32 = 612
+    let maxOtmazaNumber: UInt32 = 613
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var otmazaTextLabel: UILabel!
+    @IBOutlet weak var nextOtmazaButtonOutlet: UIButton!
+    @IBOutlet weak var openURLButtonOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +83,7 @@ class ViewController: UIViewController {
             let currOtmaza = self.setOtmaza()
             dispatch_async(mainQ, { () -> Void in
                 self.otmazaTextLabel.text = currOtmaza
-                self.spinner.stopAnimating()
+                self.stopSpinner()
             })
         }
     }
@@ -92,6 +94,17 @@ class ViewController: UIViewController {
         let kScreenHeight = kScreenSize.height
         spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         spinner.startAnimating()
+        doButtonsEnabled(false)
+    }
+    
+    func stopSpinner() {
+        spinner.stopAnimating()
+        doButtonsEnabled(true)
+    }
+    
+    func doButtonsEnabled(enabled: Bool) {
+        nextOtmazaButtonOutlet.enabled = enabled
+        openURLButtonOutlet.enabled = enabled
     }
     
     // MARK: - Image and blur
@@ -103,7 +116,7 @@ class ViewController: UIViewController {
     }
     
     func setImage() {
-        imgNumber = getAnotherRandomNumber(imgNumber, maxValue: 7)
+        imgNumber = getAnotherRandomNumber(imgNumber, maxValue: 10)
         let bgImage = UIImage(named: "Pic\(imgNumber)")
         backgroundImageView.image = bgImage
     }
@@ -191,13 +204,19 @@ class ViewController: UIViewController {
     }
     
     func getAnotherRandomNumber(prevNumber: Int, maxValue: UInt32) -> Int {
-        var result = Int(arc4random_uniform(maxValue))
+        var result = arc4random_uniform(maxValue)
+        if result >= maxValue {
+            result = maxValue
+        }
         if prevNumber != -1 {
-            while result == prevNumber || result == otmazaNumber {
-                result = Int(arc4random_uniform(maxValue))
+            while Int(result) == prevNumber || Int(result) == otmazaNumber {
+                result = arc4random_uniform(maxValue)
+                if result >= maxValue {
+                    result = maxValue
+                }
             }
         }
-        return result
+        return Int(result)
     }
     
 }
