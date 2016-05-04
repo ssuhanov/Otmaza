@@ -12,7 +12,7 @@ import CoreData
 let kRunsCount = "kRunsCount"
 
 class ViewController: UIViewController {
-    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
+//    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     var blurEffectView = UIVisualEffectView()
     let blurTimer: NSTimeInterval = 2.0
@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     let maxOtmazaNumber: UInt32 = 613
     
+    @IBOutlet weak var spinnerActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var otmazaTextLabel: UILabel!
     @IBOutlet weak var nextOtmazaButtonOutlet: UIButton!
@@ -30,8 +31,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addSubview(spinner)
-        spinner.hidesWhenStopped = true
+//        view.addSubview(spinnerActivityIndicator)
+//        spinnerActivityIndicator.hidesWhenStopped = true
         
         processFirstRun()
         performSelector(#selector(ViewController.setBlur), withObject: nil, afterDelay: 0.01)
@@ -89,16 +90,16 @@ class ViewController: UIViewController {
     }
     
     func showSpinner() {
-        let kScreenSize = view.frame.size
-        let kScreenWidth = kScreenSize.width
-        let kScreenHeight = kScreenSize.height
-        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
-        spinner.startAnimating()
+//        let kScreenSize = view.frame.size
+//        let kScreenWidth = kScreenSize.width
+//        let kScreenHeight = kScreenSize.height
+//        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
+        spinnerActivityIndicator.startAnimating()
         doButtonsEnabled(false)
     }
     
     func stopSpinner() {
-        spinner.stopAnimating()
+        spinnerActivityIndicator.stopAnimating()
         doButtonsEnabled(true)
     }
     
