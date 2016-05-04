@@ -58,10 +58,19 @@
                                     <action selector="openUrlButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yk3-nG-j6f"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="8XH-BQ-TiT">
+                                <rect key="frame" x="282" y="282" width="37" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="Tcc-CT-jWA"/>
+                                    <constraint firstAttribute="height" constant="37" id="ZUY-AX-6QC"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="8XH-BQ-TiT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1q3-Kv-ZBF"/>
                             <constraint firstItem="5Xg-Tc-6lP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2a9-ab-Reb"/>
+                            <constraint firstItem="8XH-BQ-TiT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4wQ-oa-8Ms"/>
                             <constraint firstItem="c3S-vm-MTa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5AQ-oN-1nH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e9n-0E-yf6" secondAttribute="bottom" constant="60" id="FXn-iA-bxo">
                                 <variation key="heightClass=compact" constant="30"/>
@@ -115,6 +124,7 @@
                         <outlet property="nextOtmazaButtonOutlet" destination="e9n-0E-yf6" id="veK-eq-Gz7"/>
                         <outlet property="openURLButtonOutlet" destination="c3S-vm-MTa" id="jJU-B1-dt0"/>
                         <outlet property="otmazaTextLabel" destination="5Xg-Tc-6lP" id="T5q-Jd-reT"/>
+                        <outlet property="spinnerActivityIndicator" destination="8XH-BQ-TiT" id="KZ7-e8-iGm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
