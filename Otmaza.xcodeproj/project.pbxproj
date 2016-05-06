@@ -10,6 +10,7 @@
 		B2B023331C6E536300C88A09 /* Otmaza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */; };
 		B2B023431C6E54FA00C88A09 /* Otmaza.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B023411C6E54FA00C88A09 /* Otmaza.swift */; };
 		B2D750601C73352500228D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2D750621C73352500228D30 /* InfoPlist.strings */; };
+		B2D825941CDC9351008B2708 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2D825961CDC9351008B2708 /* Localizable.strings */; };
 		B2F1D1321C6492D8001F56A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */; };
 		B2F1D1341C6492D8001F56A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1D1331C6492D8001F56A7 /* ViewController.swift */; };
 		B2F1D1371C6492D9001F56A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D1351C6492D9001F56A7 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 		B2D750551C7334CC00228D30 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B2D750611C73352500228D30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2D750631C73352D00228D30 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		B2D825951CDC9351008B2708 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B2D825971CDC9353008B2708 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2F1D12E1C6492D8001F56A7 /* Otmaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otmaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F1D1331C6492D8001F56A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 				B2F1D13A1C6492D9001F56A7 /* LaunchScreen.storyboard */,
 				B2F1D13D1C6492D9001F56A7 /* Info.plist */,
 				B2D750621C73352500228D30 /* InfoPlist.strings */,
+				B2D825961CDC9351008B2708 /* Localizable.strings */,
 				B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */,
 			);
 			path = Otmaza;
@@ -139,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D825941CDC9351008B2708 /* Localizable.strings in Resources */,
 				B2F1D13C1C6492D9001F56A7 /* LaunchScreen.storyboard in Resources */,
 				B2D750601C73352500228D30 /* InfoPlist.strings in Resources */,
 				B2F1D1391C6492D9001F56A7 /* Assets.xcassets in Resources */,
@@ -170,6 +175,15 @@
 				B2D750631C73352D00228D30 /* uk */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		B2D825961CDC9351008B2708 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B2D825951CDC9351008B2708 /* ru */,
+				B2D825971CDC9353008B2708 /* uk */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		B2F1D1351C6492D9001F56A7 /* Main.storyboard */ = {

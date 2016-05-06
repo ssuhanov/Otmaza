@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     var imgNumber = -1
     var otmazaNumber = -1
     
-    let maxOtmazaNumber: UInt32 = 613
+    let maxOtmazaNumberEN: UInt32 = 560
+    let maxOtmazaNumberRU: UInt32 = 613
     
     @IBOutlet weak var spinnerActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -45,16 +46,29 @@ class ViewController: UIViewController {
     }
     
     func fillSomeOtmazasToCoreData() {
-        saveOtmazaToCoreData(386, text: "С УТРА, Когда чистил зубы, выдавил много пасты и долго запихивал её обратно")
-        saveOtmazaToCoreData(589, text: "Лень - это гармония, когда душа не хочет, а тело не делает.")
-        saveOtmazaToCoreData(137, text: "Я сейчас не в стране, мне не очень удобно разговаривать. Вернусь через 2 недели, сразу же позвоню вам сам")
-        saveOtmazaToCoreData(600, text: "Я опоздал, потому что сломался холодильник, из которого вытекла вода и затопила будильник")
-        saveOtmazaToCoreData(501, text: "Я опоздал на работу потому, что кто-то ночью закрыл в подъезде закон притяжения. Пришлось ждать, пока его снова откроют.")
-        saveOtmazaToCoreData(8, text: "Ворона украла флешку")
-        saveOtmazaToCoreData(115, text: "Установила последнее обновление Линукса - теперь ничего не работает. Да-да, и интернет не работает. И браузеры. Буду весь день разбираться.")
-        saveOtmazaToCoreData(438, text: "в google maps слетела метка и я пришел не туда, позвонил в мчс и меня доставили прямо к дверям офиса, слава шойгу!")
-        saveOtmazaToCoreData(341, text: "Системная ошибка в нашей системе. Систематизируем правки системы. А что вы хотели, автоматизация, роботы!")
-        saveOtmazaToCoreData(344, text: "мЕНЯ СРОЧНО ВЫЗЫВАЕТ УМИРАЮЩАЯ ТЕТУШКА ИЗ оДЕССЫ ПО ПОВОДУ НАСЛЕДСТВА. изВИНИТЕ МЕНЯ, НО РОДСТВЕННИКИ МНЕ ДОРОЖЕ!!!")
+        //save EN otmazas
+        saveOtmazaToCoreData(76, text: "A close family member was in a car accident. I don't know if its serious or not, but just couldn't concentrate at work unless go check on them", localization: "EN")
+        saveOtmazaToCoreData(65, text: "I was depressed cause i’ve seen dollar’s exchange rate", localization: "EN")
+        saveOtmazaToCoreData(553, text: "i did not have it in my agenda!", localization: "EN")
+        saveOtmazaToCoreData(87, text: "Injured myself during sex and I can barely move", localization: "EN")
+        saveOtmazaToCoreData(88, text: "I woke up and somehow thought today was Sunday", localization: "EN")
+        saveOtmazaToCoreData(330, text: "I moved to another house yesterday. had no time to inform you", localization: "EN")
+        saveOtmazaToCoreData(82, text: "I am trying to be less popular. Someone has got to do it!", localization: "EN")
+        saveOtmazaToCoreData(81, text: "My neighbor called - the water pipes \"broke\" and basement is flooding. Got to get home ASAP, sorry!", localization: "EN")
+        saveOtmazaToCoreData(89, text: "My hair dye went horribly wrong. I don’t want to show up like a hippie", localization: "EN")
+        saveOtmazaToCoreData(86, text: "My trousers split on a way to work", localization: "EN")
+        
+        //save RU otmazas
+        saveOtmazaToCoreData(386, text: "С УТРА, Когда чистил зубы, выдавил много пасты и долго запихивал её обратно", localization: "RU")
+        saveOtmazaToCoreData(589, text: "Лень - это гармония, когда душа не хочет, а тело не делает.", localization: "RU")
+        saveOtmazaToCoreData(137, text: "Я сейчас не в стране, мне не очень удобно разговаривать. Вернусь через 2 недели, сразу же позвоню вам сам", localization: "RU")
+        saveOtmazaToCoreData(600, text: "Я опоздал, потому что сломался холодильник, из которого вытекла вода и затопила будильник", localization: "RU")
+        saveOtmazaToCoreData(501, text: "Я опоздал на работу потому, что кто-то ночью закрыл в подъезде закон притяжения. Пришлось ждать, пока его снова откроют.", localization: "RU")
+        saveOtmazaToCoreData(8, text: "Ворона украла флешку", localization: "RU")
+        saveOtmazaToCoreData(115, text: "Установила последнее обновление Линукса - теперь ничего не работает. Да-да, и интернет не работает. И браузеры. Буду весь день разбираться.", localization: "RU")
+        saveOtmazaToCoreData(438, text: "в google maps слетела метка и я пришел не туда, позвонил в мчс и меня доставили прямо к дверям офиса, слава шойгу!", localization: "RU")
+        saveOtmazaToCoreData(341, text: "Системная ошибка в нашей системе. Систематизируем правки системы. А что вы хотели, автоматизация, роботы!", localization: "RU")
+        saveOtmazaToCoreData(344, text: "мЕНЯ СРОЧНО ВЫЗЫВАЕТ УМИРАЮЩАЯ ТЕТУШКА ИЗ оДЕССЫ ПО ПОВОДУ НАСЛЕДСТВА. изВИНИТЕ МЕНЯ, НО РОДСТВЕННИКИ МНЕ ДОРОЖЕ!!!", localization: "RU")
     }
     
     @IBAction func nextOtmazaButton(sender: AnyObject) {
@@ -62,8 +76,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func openUrlButton(sender: AnyObject) {
-//        if let url = NSURL(string: "http://copout.me/get-excuse/\(otmazaNumber)") {
-        if let url = NSURL(string: "http://copout.me") {
+        if let url = NSURL(string: NSLocalizedString("http://copout.me/en", comment: "")) {
             UIApplication.sharedApplication().openURL(url)
         }
     }
@@ -124,6 +137,10 @@ class ViewController: UIViewController {
     
     // MARK: - Find otmaza
     func setOtmaza() -> String {
+        var maxOtmazaNumber = maxOtmazaNumberEN
+        if NSLocalizedString("EN", comment: "") != "EN" {
+            maxOtmazaNumber = maxOtmazaNumberRU
+        }
         var newOtmazaNumber = getAnotherRandomNumber(otmazaNumber, maxValue: maxOtmazaNumber)
         var otmaza = getOtmaza(newOtmazaNumber)
         while otmaza.isEmpty {
@@ -140,7 +157,7 @@ class ViewController: UIViewController {
             return resultFromCoreData
         }
         
-        guard let url = NSURL(string: "http://copout.me/get-excuse/\(number)"),
+        guard let url = NSURL(string: NSLocalizedString("http://copout.me/en", comment: "")+"/get-excuse/\(number)"),
             let myData = NSData(contentsOfURL: url),
             let myString = String(data: myData, encoding: NSUTF8StringEncoding) else {
                 return ""
@@ -151,19 +168,19 @@ class ViewController: UIViewController {
         
         guard let myRangeStart = resultStart,
             let myRangeFinish = resultFinish else {
-//                saveOtmazaToCoreData(number, text: "")
+//                saveOtmazaToCoreData(number, text: "", localization: NSLocalizedString("EN", comment: ""))
                 return ""
         }
         
         let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
         
-        saveOtmazaToCoreData(number, text: resultString)
+        saveOtmazaToCoreData(number, text: resultString, localization: NSLocalizedString("EN", comment: ""))
         return resultString
     }
     
     func findOtmazaInCoreData(id: Int) -> String? {
         let fetchRequest = NSFetchRequest(entityName: "Otmaza")
-        let predicate = NSPredicate(format: "id == %i", id)
+        let predicate = NSPredicate(format: "id == %i AND localization == %@", id, NSLocalizedString("EN", comment: ""))
         fetchRequest.predicate = predicate
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext         {
             do {
@@ -182,11 +199,12 @@ class ViewController: UIViewController {
         return nil
     }
     
-    func saveOtmazaToCoreData(id: Int, text: String) {
+    func saveOtmazaToCoreData(id: Int, text: String, localization: String) {
         if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
             let otmaza: Otmaza = NSEntityDescription.insertNewObjectForEntityForName("Otmaza", inManagedObjectContext: managedObjectContext) as! Otmaza
             otmaza.id = id
             otmaza.text = text
+            otmaza.localization = localization
             
             do {
                 try managedObjectContext.save()
