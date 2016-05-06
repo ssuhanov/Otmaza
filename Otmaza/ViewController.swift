@@ -109,7 +109,7 @@ class ViewController: UIViewController {
     }
     
     func setImage() {
-        imgNumber = getAnotherRandomNumber(imgNumber, maxValue: 10)
+        imgNumber = getAnotherRandomNumber(imgNumber, maxValue: 16)
         let bgImage = UIImage(named: "Pic\(imgNumber)")
         backgroundImageView.image = bgImage
     }
