@@ -12,7 +12,6 @@ import CoreData
 let kRunsCount = "kRunsCount"
 
 class ViewController: UIViewController {
-//    let spinner = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
     
     var blurEffectView = UIVisualEffectView()
     let blurTimer: NSTimeInterval = 2.0
@@ -30,9 +29,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.addSubview(spinnerActivityIndicator)
-//        spinnerActivityIndicator.hidesWhenStopped = true
         
         processFirstRun()
         performSelector(#selector(ViewController.setBlur), withObject: nil, afterDelay: 0.01)
@@ -90,10 +86,6 @@ class ViewController: UIViewController {
     }
     
     func showSpinner() {
-//        let kScreenSize = view.frame.size
-//        let kScreenWidth = kScreenSize.width
-//        let kScreenHeight = kScreenSize.height
-//        spinner.center = CGPoint(x: kScreenWidth/2.0, y: kScreenHeight/2.0)
         spinnerActivityIndicator.startAnimating()
         doButtonsEnabled(false)
     }
