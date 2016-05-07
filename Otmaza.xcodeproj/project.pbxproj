@@ -29,6 +29,7 @@
 		B2D750631C73352D00228D30 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2D825951CDC9351008B2708 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2D825971CDC9353008B2708 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B2D825A11CDE339B008B2708 /* OtmazaLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtmazaLocal.xcdatamodel; sourceTree = "<group>"; };
 		B2F1D12E1C6492D8001F56A7 /* Otmaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otmaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F1D1331C6492D8001F56A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -345,9 +346,10 @@
 		B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B2D825A11CDE339B008B2708 /* OtmazaLocal.xcdatamodel */,
 				B2B023321C6E536300C88A09 /* Otmaza.xcdatamodel */,
 			);
-			currentVersion = B2B023321C6E536300C88A09 /* Otmaza.xcdatamodel */;
+			currentVersion = B2D825A11CDE339B008B2708 /* OtmazaLocal.xcdatamodel */;
 			path = Otmaza.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -14,7 +14,7 @@ class Otmaza: NSManagedObject {
 
     @NSManaged var id: NSNumber
     @NSManaged var text: String
-    @NSManaged var localization: String
+    @NSManaged var local: String
     
     
 }
