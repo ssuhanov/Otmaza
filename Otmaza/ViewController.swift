@@ -105,7 +105,6 @@ class ViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().setInteger(runsCount, forKey: kRunsCount)
         if runsCount == 1 {
             fillSomeOtmazasToLocalDB_RU()
-            fillSomeOtmazasToLocalDB_EN()
         }
     }
     
