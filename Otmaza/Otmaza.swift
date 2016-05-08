@@ -2,7 +2,7 @@
 //  Otmaza.swift
 //  Otmaza
 //
-//  Created by Serge Sukhanov on 12.02.16.
+//  Created by Serge Sukhanov on 08.05.16.
 //  Copyright © 2016 Serge Sukhanov. All rights reserved.
 //
 
@@ -12,9 +12,6 @@ import CoreData
 
 class Otmaza: NSManagedObject {
 
-    @NSManaged var id: NSNumber
-    @NSManaged var text: String
-    @NSManaged var local: String
-    
-    
+// Insert code here to add functionality to your managed object subclass
+
 }

@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		B2B023331C6E536300C88A09 /* Otmaza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */; };
-		B2B023431C6E54FA00C88A09 /* Otmaza.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B023411C6E54FA00C88A09 /* Otmaza.swift */; };
 		B2D750601C73352500228D30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2D750621C73352500228D30 /* InfoPlist.strings */; };
 		B2D825941CDC9351008B2708 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2D825961CDC9351008B2708 /* Localizable.strings */; };
+		B2D825A31CDF8D4F008B2708 /* OtmazaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D825A21CDF8D4F008B2708 /* OtmazaModel.swift */; };
+		B2D825A51CDF914E008B2708 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D825A41CDF914E008B2708 /* CoreDataManager.swift */; };
+		B2D825A71CDF92DF008B2708 /* CoreDataEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D825A61CDF92DF008B2708 /* CoreDataEngine.swift */; };
+		B2D825A91CDF939E008B2708 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D825A81CDF939E008B2708 /* DataStore.swift */; };
+		B2D825AE1CDF94FA008B2708 /* Otmaza+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D825AC1CDF94FA008B2708 /* Otmaza+CoreDataProperties.swift */; };
+		B2D825AF1CDF94FA008B2708 /* Otmaza.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D825AD1CDF94FA008B2708 /* Otmaza.swift */; };
 		B2F1D1321C6492D8001F56A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */; };
 		B2F1D1341C6492D8001F56A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F1D1331C6492D8001F56A7 /* ViewController.swift */; };
 		B2F1D1371C6492D9001F56A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F1D1351C6492D9001F56A7 /* Main.storyboard */; };
@@ -20,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		B2B023321C6E536300C88A09 /* Otmaza.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Otmaza.xcdatamodel; sourceTree = "<group>"; };
-		B2B023411C6E54FA00C88A09 /* Otmaza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Otmaza.swift; sourceTree = "<group>"; };
 		B2D750521C7334C500228D30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		B2D750531C7334C500228D30 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B2D750541C7334CC00228D30 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
@@ -30,6 +34,12 @@
 		B2D825951CDC9351008B2708 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2D825971CDC9353008B2708 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B2D825A11CDE339B008B2708 /* OtmazaLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtmazaLocal.xcdatamodel; sourceTree = "<group>"; };
+		B2D825A21CDF8D4F008B2708 /* OtmazaModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtmazaModel.swift; sourceTree = "<group>"; };
+		B2D825A41CDF914E008B2708 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		B2D825A61CDF92DF008B2708 /* CoreDataEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataEngine.swift; sourceTree = "<group>"; };
+		B2D825A81CDF939E008B2708 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		B2D825AC1CDF94FA008B2708 /* Otmaza+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Otmaza+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B2D825AD1CDF94FA008B2708 /* Otmaza.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Otmaza.swift; sourceTree = "<group>"; };
 		B2F1D12E1C6492D8001F56A7 /* Otmaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otmaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F1D1331C6492D8001F56A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +60,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2D825B01CDFCB76008B2708 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B2F1D1331C6492D8001F56A7 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B2D825B11CDFCB86008B2708 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				B2F1D1351C6492D9001F56A7 /* Main.storyboard */,
+			);
+			name = VIew;
+			sourceTree = "<group>";
+		};
+		B2D825B21CDFCB9A008B2708 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2D825A21CDF8D4F008B2708 /* OtmazaModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B2D825B31CDFCBB6008B2708 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B2D825AC1CDF94FA008B2708 /* Otmaza+CoreDataProperties.swift */,
+				B2D825AD1CDF94FA008B2708 /* Otmaza.swift */,
+				B2D825A41CDF914E008B2708 /* CoreDataManager.swift */,
+				B2D825A61CDF92DF008B2708 /* CoreDataEngine.swift */,
+				B2D825A81CDF939E008B2708 /* DataStore.swift */,
+				B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		B2D825B41CDFCBCF008B2708 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B2D750621C73352500228D30 /* InfoPlist.strings */,
+				B2D825961CDC9351008B2708 /* Localizable.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 		B2F1D1251C6492D8001F56A7 = {
 			isa = PBXGroup;
 			children = (
@@ -70,15 +126,14 @@
 			isa = PBXGroup;
 			children = (
 				B2F1D1311C6492D8001F56A7 /* AppDelegate.swift */,
-				B2F1D1331C6492D8001F56A7 /* ViewController.swift */,
-				B2B023411C6E54FA00C88A09 /* Otmaza.swift */,
-				B2F1D1351C6492D9001F56A7 /* Main.storyboard */,
+				B2D825B21CDFCB9A008B2708 /* Model */,
+				B2D825B11CDFCB86008B2708 /* VIew */,
+				B2D825B01CDFCB76008B2708 /* Controllers */,
+				B2D825B31CDFCBB6008B2708 /* CoreData */,
+				B2D825B41CDFCBCF008B2708 /* Localization */,
 				B2F1D1381C6492D9001F56A7 /* Assets.xcassets */,
 				B2F1D13A1C6492D9001F56A7 /* LaunchScreen.storyboard */,
 				B2F1D13D1C6492D9001F56A7 /* Info.plist */,
-				B2D750621C73352500228D30 /* InfoPlist.strings */,
-				B2D825961CDC9351008B2708 /* Localizable.strings */,
-				B2B023311C6E536300C88A09 /* Otmaza.xcdatamodeld */,
 			);
 			path = Otmaza;
 			sourceTree = "<group>";
@@ -159,9 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2D825A51CDF914E008B2708 /* CoreDataManager.swift in Sources */,
+				B2D825AE1CDF94FA008B2708 /* Otmaza+CoreDataProperties.swift in Sources */,
+				B2D825A91CDF939E008B2708 /* DataStore.swift in Sources */,
+				B2D825A71CDF92DF008B2708 /* CoreDataEngine.swift in Sources */,
 				B2F1D1341C6492D8001F56A7 /* ViewController.swift in Sources */,
 				B2F1D1321C6492D8001F56A7 /* AppDelegate.swift in Sources */,
-				B2B023431C6E54FA00C88A09 /* Otmaza.swift in Sources */,
+				B2D825AF1CDF94FA008B2708 /* Otmaza.swift in Sources */,
+				B2D825A31CDF8D4F008B2708 /* OtmazaModel.swift in Sources */,
 				B2B023331C6E536300C88A09 /* Otmaza.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
