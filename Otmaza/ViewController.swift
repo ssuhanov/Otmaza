@@ -11,6 +11,7 @@ import CoreData
 
 let kRunsCount = "kRunsCount"
 let kRunsCountLocal = "kRunsCountLocal"
+let kLastOtmazaChecked = "kLastOtmazaChecked"
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,8 @@ class ViewController: UIViewController {
         
         processFirstRun()
         processDataBaseMigrate()
+        loadOtmazas()
+        
         performSelector(#selector(ViewController.setBlur), withObject: nil, afterDelay: 0.01)
         performSelector(#selector(ViewController.showRandomBackgroundAndOtmaza), withObject: nil, afterDelay: 0.02)
     }
@@ -148,8 +151,17 @@ class ViewController: UIViewController {
         createOtmazaInLocalDB(81, text: "My neighbor called - the water pipes \"broke\" and basement is flooding. Got to get home ASAP, sorry!", local: "EN")
         createOtmazaInLocalDB(89, text: "My hair dye went horribly wrong. I don’t want to show up like a hippie", local: "EN")
         createOtmazaInLocalDB(86, text: "My trousers split on a way to work", local: "EN")
+        createOtmazaInLocalDB(64, text: "The dog ate my notebook. Really! It`s no funny!", local: "EN")
+        createOtmazaInLocalDB(66, text: "Leonardo DiCaprio called me to netflix and chill last night", local: "EN")
+        createOtmazaInLocalDB(67, text: "My spiritual animal is a bear, so it’s hard for me to be awaken this cold winter days", local: "EN")
+        createOtmazaInLocalDB(68, text: "It’s always hard for me to write first and i was waiting for your letter", local: "EN")
+        createOtmazaInLocalDB(69, text: "There are cops around, i’ll call you later", local: "EN")
+        createOtmazaInLocalDB(70, text: "I’ve met love of my life. But after one week i’ve realised that i was wrong. I’ll finish project in a week", local: "EN")
+        createOtmazaInLocalDB(71, text: "I’ve thought everyone was watching new Sherlock episode, so we have 2 more days", local: "EN")
+        createOtmazaInLocalDB(72, text: "Someone changed my e-mail password and i can’t read TRD or find your mail and phone number", local: "EN")
+        createOtmazaInLocalDB(73, text: "Design was finished one week ago, but it was too good for this world, so i’ve decided to do another one, i’ll send it tomorrow", local: "EN")
+        createOtmazaInLocalDB(74, text: "I’ve locked my keys in car. The locksmith's on the way, but he said it might be hours before he arrives", local: "EN" )
     }
-    
     
     // MARK: - Database methods
     
@@ -199,32 +211,52 @@ class ViewController: UIViewController {
     
     // MARK: - Update from site methods
     
-    //    func getOtmaza(number: Int) -> String {
-    //        // let find otmaza in core data first
-    //        if let resultFromCoreData = findOtmazaInCoreData(number) {
-    //            return resultFromCoreData
-    //        }
-    //
-    //        guard let url = NSURL(string: NSLocalizedString("http://copout.me/en", comment: "")+"/get-excuse/\(number)"),
-    //            let myData = NSData(contentsOfURL: url),
-    //            let myString = String(data: myData, encoding: NSUTF8StringEncoding) else {
-    //                return ""
-    //        }
-    //
-    //        let resultStart = myString.rangeOfString("<blockquote>")
-    //        let resultFinish = myString.rangeOfString("</blockquote>")
-    //
-    //        guard let myRangeStart = resultStart,
-    //            let myRangeFinish = resultFinish else {
-    ////                createOtmazaInLocalDB(number, text: "", local: NSLocalizedString("EN", comment: ""))
-    //                return ""
-    //        }
-    //
-    //        let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-    //
-    //        createOtmazaInLocalDB(number, text: resultString, local: NSLocalizedString("EN", comment: ""))
-    //        return resultString
-    //    }
+    func loadOtmazas() {
+        let queueForLoadOtmazas = dispatch_queue_create("queueForLetOtmazas", DISPATCH_QUEUE_CONCURRENT)
+        dispatch_async(queueForLoadOtmazas) { () -> Void in
+            self.loadOtmazasAsync(NSUserDefaults.standardUserDefaults().integerForKey(kLastOtmazaChecked), idTo: Int(self.maxOtmazaNumber))
+        }
+    }
+    
+    func loadOtmazasAsync(idFrom: Int, idTo: Int) {
+        for i in idFrom...idTo {
+            loadOtmaza(i)
+            NSUserDefaults.standardUserDefaults().setInteger(i, forKey: kLastOtmazaChecked)
+            if NSUserDefaults.standardUserDefaults().integerForKey(kLastOtmazaChecked) == Int(maxOtmazaNumber) {
+                NSUserDefaults.standardUserDefaults().setInteger(0, forKey: kLastOtmazaChecked)
+            }
+        }
+    }
+    
+    func loadOtmaza(otmazaId: Int) {
+        print(NSLocalizedString("http://copout.me/en", comment: "")+"/get-excuse/\(otmazaId)")
+        guard let url = NSURL(string: NSLocalizedString("http://copout.me/en", comment: "")+"/get-excuse/\(otmazaId)"),
+            let myData = NSData(contentsOfURL: url),
+            let myString = String(data: myData, encoding: NSUTF8StringEncoding) else {
+                return
+        }
+        
+        let resultStart = myString.rangeOfString("<blockquote>")
+        let resultFinish = myString.rangeOfString("</blockquote>")
+        
+        guard let myRangeStart = resultStart,
+            let myRangeFinish = resultFinish else {
+                return
+        }
+        
+        let resultString = myString[myRangeStart.endIndex..<myRangeFinish.startIndex].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).stringByReplacingOccurrencesOfString("&quot;", withString: "\"").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+        print("\(otmazaId) - \(resultString)")
+        if DataStore.defaultLocalDB.checkOtmaza(otmazaId, local: NSLocalizedString("EN", comment: "")) {
+            var inputDictionary = [String:AnyObject]()
+            inputDictionary["id"] = NSNumber(integer: otmazaId)
+            inputDictionary["text"] = resultString
+            inputDictionary["local"] = NSLocalizedString("EN", comment: "")
+            let otmazaModel = OtmazaModel(inputDictionary: inputDictionary)
+            DataStore.defaultLocalDB.updateOtmaza(otmazaModel)
+        } else {
+            createOtmazaInLocalDB(otmazaId, text: resultString, local: NSLocalizedString("EN", comment: ""))
+        }
+    }
     
     // MARK: - Actions
 
