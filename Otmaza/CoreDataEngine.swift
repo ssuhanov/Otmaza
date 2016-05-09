@@ -120,4 +120,30 @@ class CoreDataEngine {
         return false
     }
     
+    func fillOtmazaLocal(local: String) -> Bool {
+        let entityDescription = NSEntityDescription.entityForName("Otmaza", inManagedObjectContext: moc)
+        let fetchRequest = NSFetchRequest()
+        fetchRequest.entity = entityDescription
+        
+        do {
+            let results = try moc.executeFetchRequest(fetchRequest)
+            let otmazas = results as! [Otmaza]
+            for otmaza in otmazas {
+                if otmaza.valueForKey("local") == nil {
+                    otmaza.setValue(local, forKey: "local")
+                    
+                    do {
+                        try moc.save()
+                    } catch let error as NSError {
+                        print("Unresolved error \(error), \(error.userInfo)")
+                        return false
+                    }
+                }
+            }
+        } catch let error as NSError {
+            print("Unresolved error \(error), \(error.userInfo)")
+            return false
+        }
+        return true
+    }
 }

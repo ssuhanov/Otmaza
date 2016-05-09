@@ -101,43 +101,27 @@ class ViewController: UIViewController {
     
     func processFirstRun() {
         var runsCount = NSUserDefaults.standardUserDefaults().integerForKey(kRunsCount)
-        runsCount += 1
-        NSUserDefaults.standardUserDefaults().setInteger(runsCount, forKey: kRunsCount)
-        if runsCount == 1 {
+        if runsCount == 0 {
             fillSomeOtmazasToLocalDB_RU()
         }
+        runsCount += 1
+        NSUserDefaults.standardUserDefaults().setInteger(runsCount, forKey: kRunsCount)
     }
     
     func processDataBaseMigrate() {
         var runsCountLocal = NSUserDefaults.standardUserDefaults().integerForKey(kRunsCountLocal)
-        runsCountLocal += 1
-        NSUserDefaults.standardUserDefaults().setInteger(runsCountLocal, forKey: kRunsCountLocal)
-        if runsCountLocal == 1 {
-            fixOldOtmazasInCoreData()
+        if runsCountLocal == 0 {
+            if !fixOldOtmazasInCoreData() {
+                return
+            }
             fillSomeOtmazasToLocalDB_EN()
         }
+        runsCountLocal += 1
+        NSUserDefaults.standardUserDefaults().setInteger(runsCountLocal, forKey: kRunsCountLocal)
     }
     
-    func fixOldOtmazasInCoreData() {
-//        let fetchRequest = NSFetchRequest(entityName: "Otmaza")
-//        if let managedObjectContext = (UIApplication.sharedApplication().delegate as? AppDelegate)?.managedObjectContext {
-//            do {
-//                let results = try managedObjectContext.executeFetchRequest(fetchRequest)
-//                let otmazas = results as! [NSManagedObject]
-//                for otmaza in otmazas {
-//                    if (otmaza.valueForKey("local") == nil) {
-//                        otmaza.setValue("RU", forKey: "local")
-//                        do {
-//                            try managedObjectContext.save()
-//                        } catch {
-//                            print(error)
-//                        }
-//                    }
-//                }
-//            } catch {
-//                print(error)
-//            }
-//        }
+    func fixOldOtmazasInCoreData() -> Bool {
+        return DataStore.defaultLocalDB.fillOtmazaLocal("RU")
     }
     
     func fillSomeOtmazasToLocalDB_RU() {
