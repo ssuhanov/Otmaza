@@ -9,9 +9,7 @@
 import UIKit
 import CoreData
 
-let kRunsCount = "kRunsCount"
-let kRunsCountLocal = "kRunsCountLocal"
-let kLastOtmazaChecked = "kLastOtmazaChecked"
+let (kRunsCount, kRunsCountLocal, kLastOtmazaChecked) = ("kRunsCount", "kRunsCountLocal", "kLastOtmazaChecked")
 
 class ViewController: UIViewController {
 
@@ -39,11 +37,8 @@ class ViewController: UIViewController {
     var blurEffectView = UIVisualEffectView()
     let blurTimer: NSTimeInterval = 2.0
     
-    var imgNumber = -1
-    var otmazaNumber = -1
-    
-    let maxImgNumber: UInt32 = 16
-    let maxOtmazaNumber: UInt32 = 1000
+    var (imgNumber, otmazaNumber) = (-1, -1)
+    let (maxImgNumber, maxOtmazaNumber): (UInt32, UInt32) = (16, 1000)
     
     // MARK: - Interface methods
     
