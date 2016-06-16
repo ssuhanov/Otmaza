@@ -1,2 +1,20 @@
+## Build generated
+build/
+DerivedData
 
-Otmaza.xcodeproj/project.xcworkspace/xcuserdata/ssuhanov.xcuserdatad/UserInterfaceState.xcuserstate
+## Various settings
+xcuserdata
+
+## Other
+*.xccheckout
+*.xcuserstate
+*.xcscheme
+Manifest.lock
+
+## Pods
+Pods/
+Podfile.lock
+Otmaza.xcworkspace/contents.xcworkspacedata
+
+## AppCode
+.idea/
