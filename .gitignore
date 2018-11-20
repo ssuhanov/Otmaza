@@ -1,4 +1,5 @@
 ## Build generated
+.DS_Store
 build/
 DerivedData
 
@@ -10,11 +11,6 @@ xcuserdata
 *.xcuserstate
 *.xcscheme
 Manifest.lock
-
-## Pods
-Pods/
-Podfile.lock
-Otmaza.xcworkspace/contents.xcworkspacedata
 
 ## AppCode
 .idea/
