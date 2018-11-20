@@ -38,6 +38,7 @@
 		B221E44121A46BA5001E716A /* OtmazaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtmazaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221E44521A46BA5001E716A /* OtmazaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtmazaTests.swift; sourceTree = "<group>"; };
 		B221E44721A46BA5001E716A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B221E45021A46DDF001E716A /* OtmazaLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtmazaLocal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -476,9 +477,10 @@
 		B221E43421A46BA2001E716A /* Otmaza.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				B221E45021A46DDF001E716A /* OtmazaLocal.xcdatamodel */,
 				B221E43521A46BA2001E716A /* Otmaza.xcdatamodel */,
 			);
-			currentVersion = B221E43521A46BA2001E716A /* Otmaza.xcdatamodel */;
+			currentVersion = B221E45021A46DDF001E716A /* OtmazaLocal.xcdatamodel */;
 			path = Otmaza.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
