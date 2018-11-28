@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,14 +15,85 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainView" customModule="Otmaza" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVu-vD-qXw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-Rj-PUM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Snx-Be-pJ0">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some otmaza here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-Ih-hZQ">
+                                <rect key="frame" x="16" y="60" width="343" height="666"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z51-Ln-KZ8">
+                                <rect key="frame" x="145" y="742" width="85" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Hp4-67-Pff">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="One more">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="oneMoreButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bf6-1k-yav"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="620-Ii-jER">
+                                <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hSJ-Rj-PUM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bh8-WS-QsS"/>
+                            <constraint firstItem="gVu-vD-qXw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DMs-9F-NVC"/>
+                            <constraint firstItem="hSJ-Rj-PUM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dna-o5-dQV"/>
+                            <constraint firstItem="620-Ii-jER" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GMu-zQ-8nc"/>
+                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HdY-mX-dle"/>
+                            <constraint firstAttribute="bottom" secondItem="hSJ-Rj-PUM" secondAttribute="bottom" id="Kk2-m9-lSs"/>
+                            <constraint firstItem="gVu-vD-qXw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LRb-Oq-aE6"/>
+                            <constraint firstItem="qkX-Ih-hZQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="P1y-yx-mQW"/>
+                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="czG-XH-XYt">
+                                <variation key="heightClass=regular-widthClass=regular" constant="-16"/>
+                            </constraint>
+                            <constraint firstItem="qkX-Ih-hZQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hnx-Xc-3vl"/>
+                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="top" secondItem="qkX-Ih-hZQ" secondAttribute="bottom" constant="16" id="i89-ND-Qei"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qkX-Ih-hZQ" secondAttribute="trailing" constant="16" id="m8G-nU-M5c"/>
+                            <constraint firstAttribute="trailing" secondItem="gVu-vD-qXw" secondAttribute="trailing" id="rbX-Fb-U8M"/>
+                            <constraint firstItem="620-Ii-jER" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ujI-s8-pZr"/>
+                            <constraint firstAttribute="bottom" secondItem="gVu-vD-qXw" secondAttribute="bottom" id="wIz-Pi-2QN"/>
+                            <constraint firstAttribute="trailing" secondItem="hSJ-Rj-PUM" secondAttribute="trailing" id="y0Z-dL-j2k"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="gVu-vD-qXw" id="al0-Wv-EXC"/>
+                        <outlet property="blurEffectView" destination="hSJ-Rj-PUM" id="aAs-wd-vNi"/>
+                        <outlet property="oneMoreButton" destination="z51-Ln-KZ8" id="gpZ-A5-Gzl"/>
+                        <outlet property="otmazaTextLabel" destination="qkX-Ih-hZQ" id="tc2-0t-wR1"/>
+                        <outlet property="spinnerIndicatorView" destination="620-Ii-jER" id="mD7-L6-FjV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="133.00492610837438"/>
         </scene>
     </scenes>
 </document>
