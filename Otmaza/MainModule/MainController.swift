@@ -26,15 +26,27 @@ class MainController {
     }
     
     func getOtmaza() {
+        self.view.hideLabel()
         self.view.startSpinner()
         self.view.disableButton()
+        self.updateBackgroundImage()
+        self.recursiveGetOtmaza()
+    }
+    
+    private func updateBackgroundImage() {
+        let imageNumber = self.randomizerService.getAnotherRandomNumber(currentNumber: self.currentImageNumber, maxValue: ApplicationConstants.MaxImageNumber)
+        self.view.updateBackground(imageName: "\(imageNumber)")
+        self.currentImageNumber = imageNumber
+    }
+    
+    private func recursiveGetOtmaza() {
         let otmazaNumber = self.randomizerService.getAnotherRandomNumber(currentNumber: self.currentOtmazaNumber, maxValue: ApplicationConstants.MaxOtmazaNumber)
         self.otmazaService.getOtmazaWith(number: otmazaNumber) { (otmazaString) in
             if let otmaza = otmazaString {
                 self.currentOtmazaNumber = otmazaNumber
                 self.updateWith(otmaza: otmaza)
             } else {
-                self.getOtmaza()
+                self.recursiveGetOtmaza()
             }
         }
     }
@@ -42,9 +54,6 @@ class MainController {
     private func updateWith(otmaza: String) {
         self.view.stopSpinner()
         self.view.updateLabel(text: otmaza)
-        let imageNumber = self.randomizerService.getAnotherRandomNumber(currentNumber: self.currentImageNumber, maxValue: ApplicationConstants.MaxImageNumber)
-        self.view.updateBackground(imageName: "\(imageNumber)")
-        self.currentImageNumber = imageNumber
         self.view.enableButton()
     }
 }
