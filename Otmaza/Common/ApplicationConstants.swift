@@ -12,4 +12,6 @@ struct ApplicationConstants {
     static let Blockquote = "blockquote"
     static let BaseUrl = "http://copout.me/en"
     static let AdditionUrl = "/get-excuse/"
+    
+    static let MaxOtmazaNumber: UInt32 = 1000
 }
