@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21F218F21AE9661006E2AAA /* GetOtmazaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F218E21AE9661006E2AAA /* GetOtmazaService.swift */; };
 		B21F219121AE99F2006E2AAA /* ExtractOtmazaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */; };
 		B21F219321AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */; };
 		B21F219621AE9CF3006E2AAA /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21F218E21AE9661006E2AAA /* GetOtmazaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetOtmazaService.swift; sourceTree = "<group>"; };
 		B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractOtmazaService.swift; sourceTree = "<group>"; };
 		B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractOtmazaServiceTests.swift; sourceTree = "<group>"; };
 		B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 		B21F218D21AE964C006E2AAA /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B21F218E21AE9661006E2AAA /* GetOtmazaService.swift */,
 				B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */,
 			);
 			path = Services;
@@ -227,6 +230,7 @@
 				B221E43021A46BA2001E716A /* ViewController.swift in Sources */,
 				B21F219621AE9CF3006E2AAA /* ApplicationConstants.swift in Sources */,
 				B221E42E21A46BA2001E716A /* AppDelegate.swift in Sources */,
+				B21F218F21AE9661006E2AAA /* GetOtmazaService.swift in Sources */,
 				B221E43621A46BA2001E716A /* Otmaza.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
