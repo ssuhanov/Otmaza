@@ -14,4 +14,5 @@ struct ApplicationConstants {
     static let AdditionUrl = "/get-excuse/"
     
     static let MaxOtmazaNumber: UInt32 = 1000
+    static let MaxImageNumber: UInt32 = 15
 }
