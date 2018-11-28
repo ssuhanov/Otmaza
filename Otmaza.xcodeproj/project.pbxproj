@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B21F219121AE99F2006E2AAA /* ExtractOtmazaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */; };
+		B21F219321AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */; };
+		B21F219621AE9CF3006E2AAA /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */; };
 		B221E42E21A46BA2001E716A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221E42D21A46BA2001E716A /* AppDelegate.swift */; };
 		B221E43021A46BA2001E716A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221E42F21A46BA2001E716A /* ViewController.swift */; };
 		B221E43321A46BA2001E716A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B221E43121A46BA2001E716A /* Main.storyboard */; };
 		B221E43621A46BA2001E716A /* Otmaza.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B221E43421A46BA2001E716A /* Otmaza.xcdatamodeld */; };
 		B221E43821A46BA5001E716A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B221E43721A46BA5001E716A /* Assets.xcassets */; };
 		B221E43B21A46BA5001E716A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B221E43921A46BA5001E716A /* LaunchScreen.storyboard */; };
-		B221E44621A46BA5001E716A /* OtmazaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221E44521A46BA5001E716A /* OtmazaTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractOtmazaService.swift; sourceTree = "<group>"; };
+		B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractOtmazaServiceTests.swift; sourceTree = "<group>"; };
+		B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
 		B221E42A21A46BA2001E716A /* Otmaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otmaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221E42D21A46BA2001E716A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B221E42F21A46BA2001E716A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,7 +41,6 @@
 		B221E43A21A46BA5001E716A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B221E43C21A46BA5001E716A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B221E44121A46BA5001E716A /* OtmazaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OtmazaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B221E44521A46BA5001E716A /* OtmazaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtmazaTests.swift; sourceTree = "<group>"; };
 		B221E44721A46BA5001E716A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B221E45021A46DDF001E716A /* OtmazaLocal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OtmazaLocal.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -59,6 +63,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B21F218D21AE964C006E2AAA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B21F219421AE9CE5006E2AAA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		B221E42121A46BA2001E716A = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +100,8 @@
 		B221E42C21A46BA2001E716A /* Otmaza */ = {
 			isa = PBXGroup;
 			children = (
+				B21F219421AE9CE5006E2AAA /* Common */,
+				B21F218D21AE964C006E2AAA /* Services */,
 				B221E42D21A46BA2001E716A /* AppDelegate.swift */,
 				B221E42F21A46BA2001E716A /* ViewController.swift */,
 				B221E43121A46BA2001E716A /* Main.storyboard */,
@@ -94,7 +116,7 @@
 		B221E44421A46BA5001E716A /* OtmazaTests */ = {
 			isa = PBXGroup;
 			children = (
-				B221E44521A46BA5001E716A /* OtmazaTests.swift */,
+				B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */,
 				B221E44721A46BA5001E716A /* Info.plist */,
 			);
 			path = OtmazaTests;
@@ -201,7 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21F219121AE99F2006E2AAA /* ExtractOtmazaService.swift in Sources */,
 				B221E43021A46BA2001E716A /* ViewController.swift in Sources */,
+				B21F219621AE9CF3006E2AAA /* ApplicationConstants.swift in Sources */,
 				B221E42E21A46BA2001E716A /* AppDelegate.swift in Sources */,
 				B221E43621A46BA2001E716A /* Otmaza.xcdatamodeld in Sources */,
 			);
@@ -211,7 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B221E44621A46BA5001E716A /* OtmazaTests.swift in Sources */,
+				B21F219321AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
