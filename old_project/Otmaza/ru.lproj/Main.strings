@@ -1,9 +1,0 @@
-
-/* Class = "UILabel"; text = "There is some text in label. It should be in two rows at minimum. Or more rows. I want to write more text here."; ObjectID = "5Xg-Tc-6lP"; */
-"5Xg-Tc-6lP.text" = "There is some text in label. It should be in two rows at minimum. Or more rows. I want to write more text here.";
-
-/* Class = "UIButton"; normalTitle = "http://copout.me"; ObjectID = "c3S-vm-MTa"; */
-"c3S-vm-MTa.normalTitle" = "http://copout.me";
-
-/* Class = "UIButton"; normalTitle = "One more"; ObjectID = "e9n-0E-yf6"; */
-"e9n-0E-yf6.normalTitle" = "Еще отмазку";
