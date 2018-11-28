@@ -10,7 +10,6 @@ import XCTest
 @testable import Otmaza
 
 class ExtractOtmazaServiceTests: XCTestCase {
-    
     let instance = ExtractOtmazaService()
     let correctOtmaza = "correct_otmaza"
     let emptyOtmaza = ""

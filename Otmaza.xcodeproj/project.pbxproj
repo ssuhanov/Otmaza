@@ -11,6 +11,8 @@
 		B21F219121AE99F2006E2AAA /* ExtractOtmazaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */; };
 		B21F219321AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */; };
 		B21F219621AE9CF3006E2AAA /* ApplicationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */; };
+		B21F219821AEA8AF006E2AAA /* RandomizerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219721AEA8AF006E2AAA /* RandomizerService.swift */; };
+		B21F219A21AEAABB006E2AAA /* RandomizerServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21F219921AEAABB006E2AAA /* RandomizerServiceTests.swift */; };
 		B221E42E21A46BA2001E716A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221E42D21A46BA2001E716A /* AppDelegate.swift */; };
 		B221E43021A46BA2001E716A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221E42F21A46BA2001E716A /* ViewController.swift */; };
 		B221E43321A46BA2001E716A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B221E43121A46BA2001E716A /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 		B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractOtmazaService.swift; sourceTree = "<group>"; };
 		B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtractOtmazaServiceTests.swift; sourceTree = "<group>"; };
 		B21F219521AE9CF2006E2AAA /* ApplicationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConstants.swift; sourceTree = "<group>"; };
+		B21F219721AEA8AF006E2AAA /* RandomizerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerService.swift; sourceTree = "<group>"; };
+		B21F219921AEAABB006E2AAA /* RandomizerServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerServiceTests.swift; sourceTree = "<group>"; };
 		B221E42A21A46BA2001E716A /* Otmaza.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Otmaza.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B221E42D21A46BA2001E716A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B221E42F21A46BA2001E716A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				B21F218E21AE9661006E2AAA /* GetOtmazaService.swift */,
 				B21F219021AE99F2006E2AAA /* ExtractOtmazaService.swift */,
+				B21F219721AEA8AF006E2AAA /* RandomizerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				B21F219221AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift */,
+				B21F219921AEAABB006E2AAA /* RandomizerServiceTests.swift */,
 				B221E44721A46BA5001E716A /* Info.plist */,
 			);
 			path = OtmazaTests;
@@ -226,6 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21F219821AEA8AF006E2AAA /* RandomizerService.swift in Sources */,
 				B21F219121AE99F2006E2AAA /* ExtractOtmazaService.swift in Sources */,
 				B221E43021A46BA2001E716A /* ViewController.swift in Sources */,
 				B21F219621AE9CF3006E2AAA /* ApplicationConstants.swift in Sources */,
@@ -239,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B21F219A21AEAABB006E2AAA /* RandomizerServiceTests.swift in Sources */,
 				B21F219321AE9A20006E2AAA /* ExtractOtmazaServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
