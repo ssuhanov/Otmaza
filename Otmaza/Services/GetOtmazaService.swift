@@ -11,6 +11,12 @@ import Foundation
 typealias OtmazaCompletion = (String?) -> Void
 
 class GetOtmazaService {
+    var extractOtmazaService: ExtractOtmazaService
+    
+    init(extractOtmazaService: ExtractOtmazaService = ExtractOtmazaService()) {
+        self.extractOtmazaService = extractOtmazaService
+    }
+    
     func getOtmazaWith(number: Int, completion: OtmazaCompletion?) {
         let urlString = "\(ApplicationConstants.BaseUrl)\(ApplicationConstants.AdditionUrl)\(number)"
         guard let url = URL(string: urlString) else {
@@ -25,7 +31,7 @@ class GetOtmazaService {
                 return
             }
             
-            resultString = ExtractOtmazaService().extractOtmaza(body: String(data: data, encoding: .utf8))
+            resultString = self.extractOtmazaService.extractOtmaza(body: String(data: data, encoding: .utf8))
             completion?(resultString)
         }
         dataTask.resume()
