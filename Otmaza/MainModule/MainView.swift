@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainView.swift
 //  Otmaza
 //
 //  Created by Serge Sukhanov on 11/20/18.
@@ -8,13 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-
+protocol MainViewProtocol: class {
+    
 }
 
+class MainView: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+}
+
+// MARK: - MainViewProtocol
+extension MainView: MainViewProtocol {
+    
+}
