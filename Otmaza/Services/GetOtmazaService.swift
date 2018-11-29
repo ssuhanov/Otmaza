@@ -24,7 +24,7 @@ class GetOtmazaService {
             return
         }
         
-        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, _, _) in
             let resultString: String?
             guard let data = data else {
                 resultString = nil

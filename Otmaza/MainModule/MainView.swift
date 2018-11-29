@@ -19,6 +19,7 @@ protocol MainViewProtocol: class {
     func enableButton()
     func disableButton()
     func updateButton(title: String)
+    func open(url: URL)
 }
 
 class MainView: UIViewController {
@@ -61,6 +62,10 @@ class MainView: UIViewController {
         deactivate.isEnabled = true
         activate.alpha = 1.0
         deactivate.alpha = 0.5
+    }
+    
+    @IBAction func linkButtonPressed(_ sender: UIButton) {
+        self.controller.transitionToWeb()
     }
 }
 
@@ -118,6 +123,12 @@ extension MainView: MainViewProtocol {
     func updateButton(title: String) {
         DispatchQueue.main.async {
             self.oneMoreButton.setTitle(title, for: .normal)
+        }
+    }
+    
+    func open(url: URL) {
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }

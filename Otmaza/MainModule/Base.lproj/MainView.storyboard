@@ -30,7 +30,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some otmaza here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-Ih-hZQ">
-                                <rect key="frame" x="16" y="96" width="343" height="622"/>
+                                <rect key="frame" x="16" y="96" width="343" height="598"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z51-Ln-KZ8">
-                                <rect key="frame" x="144" y="726" width="87" height="36"/>
+                                <rect key="frame" x="144" y="702" width="87" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Hp4-67-Pff">
                                         <variation key="heightClass=regular-widthClass=regular" constant="48"/>
@@ -54,6 +54,20 @@
                                 </variation>
                                 <connections>
                                     <action selector="oneMoreButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bf6-1k-yav"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6S1-Zt-rCq">
+                                <rect key="frame" x="152.66666666666666" y="741" width="70" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="copout.me">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                </variation>
+                                <connections>
+                                    <action selector="linkButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="81B-bH-4v9"/>
+                                    <action selector="oneMoreButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dZI-rZ-P0J"/>
                                 </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="620-Ii-jER">
@@ -108,19 +122,35 @@
                             <constraint firstItem="z51-Ln-KZ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HdY-mX-dle"/>
                             <constraint firstAttribute="bottom" secondItem="hSJ-Rj-PUM" secondAttribute="bottom" id="Kk2-m9-lSs"/>
                             <constraint firstItem="gVu-vD-qXw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LRb-Oq-aE6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6S1-Zt-rCq" secondAttribute="trailing" constant="16" id="MJy-tQ-bxz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f6y-uF-2dl" secondAttribute="trailing" constant="16" id="Mtz-eV-4im"/>
-                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-16" id="czG-XH-XYt"/>
+                            <constraint firstItem="6S1-Zt-rCq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bRm-TF-Q3Q"/>
+                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-16" id="czG-XH-XYt">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-40"/>
+                            </constraint>
                             <constraint firstItem="qyD-sq-x0q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="h7m-7r-tNN"/>
                             <constraint firstItem="qkX-Ih-hZQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hnx-Xc-3vl"/>
                             <constraint firstItem="z51-Ln-KZ8" firstAttribute="top" secondItem="qkX-Ih-hZQ" secondAttribute="bottom" constant="8" id="i89-ND-Qei"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qkX-Ih-hZQ" secondAttribute="trailing" constant="16" id="m8G-nU-M5c"/>
                             <constraint firstItem="f6y-uF-2dl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="oD8-k6-Ewf"/>
                             <constraint firstAttribute="trailing" secondItem="gVu-vD-qXw" secondAttribute="trailing" id="rbX-Fb-U8M"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="6S1-Zt-rCq" secondAttribute="bottom" constant="8" id="rdb-bH-fzl"/>
                             <constraint firstItem="620-Ii-jER" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ujI-s8-pZr"/>
                             <constraint firstAttribute="bottom" secondItem="gVu-vD-qXw" secondAttribute="bottom" id="wIz-Pi-2QN"/>
                             <constraint firstAttribute="trailing" secondItem="hSJ-Rj-PUM" secondAttribute="trailing" id="y0Z-dL-j2k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="bRm-TF-Q3Q"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <exclude reference="MJy-tQ-bxz"/>
+                                <include reference="bRm-TF-Q3Q"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="backgroundImageView" destination="gVu-vD-qXw" id="al0-Wv-EXC"/>

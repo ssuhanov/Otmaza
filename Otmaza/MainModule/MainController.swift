@@ -46,6 +46,12 @@ class MainController {
         self.getOtmaza()
     }
     
+    func transitionToWeb() {
+        if let webUrl = URL(string: ApplicationConstants.LocaleUrl) {
+            self.view.open(url: webUrl)
+        }
+    }
+    
     private func updateBackgroundImage() {
         let imageNumber = self.randomizerService.getAnotherRandomNumber(currentNumber: self.currentImageNumber, maxValue: ApplicationConstants.MaxImageNumber)
         self.view.updateBackground(imageName: "\(imageNumber)")
