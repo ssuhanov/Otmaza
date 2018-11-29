@@ -18,6 +18,7 @@ protocol MainViewProtocol: class {
     func updateBackground(imageName: String)
     func enableButton()
     func disableButton()
+    func updateButton(title: String)
 }
 
 class MainView: UIViewController {
@@ -28,6 +29,9 @@ class MainView: UIViewController {
     @IBOutlet weak var otmazaTextLabel: UILabel!
     @IBOutlet weak var oneMoreButton: UIButton!
     @IBOutlet weak var spinnerIndicatorView: UIActivityIndicatorView!
+    
+    @IBOutlet weak var ruLanguageButton: UIButton!
+    @IBOutlet weak var engLanguageButton: UIButton!
     
     override func awakeFromNib() {
         self.controller = MainController(view: self)
@@ -40,6 +44,23 @@ class MainView: UIViewController {
     
     @IBAction func oneMoreButtonPressed(_ sender: UIButton) {
         self.controller.getOtmaza()
+    }
+    
+    @IBAction func ruLanguageButtonPressed(_ sender: UIButton) {
+        self.switchButtons(activate: self.ruLanguageButton, deactivate: self.engLanguageButton)
+        self.controller.update(locale: .ru)
+    }
+    
+    @IBAction func engLanguageButtonPressed(_ sender: UIButton) {
+        self.switchButtons(activate: self.engLanguageButton, deactivate: self.ruLanguageButton)
+        self.controller.update(locale: .eng)
+    }
+    
+    private func switchButtons(activate: UIButton, deactivate: UIButton) {
+        activate.isEnabled = false
+        deactivate.isEnabled = true
+        activate.alpha = 1.0
+        deactivate.alpha = 0.5
     }
 }
 
@@ -82,13 +103,21 @@ extension MainView: MainViewProtocol {
     
     func enableButton() {
         DispatchQueue.main.async {
+            self.oneMoreButton.alpha = 1.0
             self.oneMoreButton.isEnabled = true
         }
     }
     
     func disableButton() {
         DispatchQueue.main.async {
+            self.oneMoreButton.alpha = 0.5
             self.oneMoreButton.isEnabled = false
+        }
+    }
+
+    func updateButton(title: String) {
+        DispatchQueue.main.async {
+            self.oneMoreButton.setTitle(title, for: .normal)
         }
     }
 }
