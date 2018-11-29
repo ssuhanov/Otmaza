@@ -18,7 +18,7 @@ class GetOtmazaService {
     }
     
     func getOtmazaWith(number: Int, completion: OtmazaCompletion?) {
-        let urlString = "\(ApplicationConstants.BaseUrl)\(ApplicationConstants.AdditionUrl)\(number)"
+        let urlString = "\(ApplicationConstants.LocaleUrl)\(ApplicationConstants.AdditionUrl)\(number)"
         guard let url = URL(string: urlString) else {
             completion?(nil)
             return

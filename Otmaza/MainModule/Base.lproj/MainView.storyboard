@@ -30,7 +30,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some otmaza here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-Ih-hZQ">
-                                <rect key="frame" x="16" y="60" width="343" height="666"/>
+                                <rect key="frame" x="16" y="96" width="343" height="622"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -39,14 +39,14 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z51-Ln-KZ8">
-                                <rect key="frame" x="145" y="742" width="85" height="36"/>
+                                <rect key="frame" x="144" y="726" width="87" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Hp4-67-Pff">
                                         <variation key="heightClass=regular-widthClass=regular" constant="48"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="One more">
+                                <state key="normal" title="Хочу ещё">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -59,23 +59,62 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="620-Ii-jER">
                                 <rect key="frame" x="169" y="387.66666666666669" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6y-uF-2dl">
+                                <rect key="frame" x="329" y="52" width="30" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="p7Z-kO-xKl">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="RU">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="ruLanguageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bmr-La-Mzu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyD-sq-x0q">
+                                <rect key="frame" x="280" y="52" width="41" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="ald-W6-XFa">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="ENG">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="engLanguageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u96-Ro-Zed"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qyD-sq-x0q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="8iQ-r0-WpA"/>
                             <constraint firstItem="hSJ-Rj-PUM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Bh8-WS-QsS"/>
+                            <constraint firstItem="f6y-uF-2dl" firstAttribute="leading" secondItem="qyD-sq-x0q" secondAttribute="trailing" constant="8" id="C4z-cU-1Gg"/>
                             <constraint firstItem="gVu-vD-qXw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DMs-9F-NVC"/>
                             <constraint firstItem="hSJ-Rj-PUM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dna-o5-dQV"/>
                             <constraint firstItem="620-Ii-jER" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GMu-zQ-8nc"/>
+                            <constraint firstItem="qkX-Ih-hZQ" firstAttribute="top" secondItem="f6y-uF-2dl" secondAttribute="bottom" constant="8" id="HPw-Ft-IeN"/>
                             <constraint firstItem="z51-Ln-KZ8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HdY-mX-dle"/>
                             <constraint firstAttribute="bottom" secondItem="hSJ-Rj-PUM" secondAttribute="bottom" id="Kk2-m9-lSs"/>
                             <constraint firstItem="gVu-vD-qXw" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LRb-Oq-aE6"/>
-                            <constraint firstItem="qkX-Ih-hZQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="P1y-yx-mQW"/>
-                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="czG-XH-XYt">
-                                <variation key="heightClass=regular-widthClass=regular" constant="-16"/>
-                            </constraint>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f6y-uF-2dl" secondAttribute="trailing" constant="16" id="Mtz-eV-4im"/>
+                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-16" id="czG-XH-XYt"/>
+                            <constraint firstItem="qyD-sq-x0q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="h7m-7r-tNN"/>
                             <constraint firstItem="qkX-Ih-hZQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hnx-Xc-3vl"/>
-                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="top" secondItem="qkX-Ih-hZQ" secondAttribute="bottom" constant="16" id="i89-ND-Qei"/>
+                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="top" secondItem="qkX-Ih-hZQ" secondAttribute="bottom" constant="8" id="i89-ND-Qei"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qkX-Ih-hZQ" secondAttribute="trailing" constant="16" id="m8G-nU-M5c"/>
+                            <constraint firstItem="f6y-uF-2dl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="oD8-k6-Ewf"/>
                             <constraint firstAttribute="trailing" secondItem="gVu-vD-qXw" secondAttribute="trailing" id="rbX-Fb-U8M"/>
                             <constraint firstItem="620-Ii-jER" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ujI-s8-pZr"/>
                             <constraint firstAttribute="bottom" secondItem="gVu-vD-qXw" secondAttribute="bottom" id="wIz-Pi-2QN"/>
@@ -86,8 +125,10 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="gVu-vD-qXw" id="al0-Wv-EXC"/>
                         <outlet property="blurEffectView" destination="hSJ-Rj-PUM" id="aAs-wd-vNi"/>
+                        <outlet property="engLanguageButton" destination="qyD-sq-x0q" id="Kxn-Bc-Uum"/>
                         <outlet property="oneMoreButton" destination="z51-Ln-KZ8" id="gpZ-A5-Gzl"/>
                         <outlet property="otmazaTextLabel" destination="qkX-Ih-hZQ" id="tc2-0t-wR1"/>
+                        <outlet property="ruLanguageButton" destination="f6y-uF-2dl" id="2bp-UN-PtV"/>
                         <outlet property="spinnerIndicatorView" destination="620-Ii-jER" id="mD7-L6-FjV"/>
                     </connections>
                 </viewController>
