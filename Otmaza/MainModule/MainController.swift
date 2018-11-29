@@ -30,7 +30,20 @@ class MainController {
         self.view.startSpinner()
         self.view.disableButton()
         self.updateBackgroundImage()
-        self.recursiveGetOtmaza()
+        self.recursiveGetOtmaza(locale: ApplicationConstants.Locale)
+    }
+    
+    func update(locale: Localization) {
+        ApplicationConstants.Locale = locale
+        let buttonTitle: String
+        switch locale {
+        case .ru:
+            buttonTitle = "Хочу ещё"
+        case .eng:
+            buttonTitle = "One more"
+        }
+        self.view.updateButton(title: buttonTitle)
+        self.getOtmaza()
     }
     
     private func updateBackgroundImage() {
@@ -39,14 +52,22 @@ class MainController {
         self.currentImageNumber = imageNumber
     }
     
-    private func recursiveGetOtmaza() {
+    private func recursiveGetOtmaza(locale: Localization) {
+        guard locale == ApplicationConstants.Locale else {
+            return
+        }
+        
         let otmazaNumber = self.randomizerService.getAnotherRandomNumber(currentNumber: self.currentOtmazaNumber, maxValue: ApplicationConstants.MaxOtmazaNumber)
         self.otmazaService.getOtmazaWith(number: otmazaNumber) { (otmazaString) in
+            guard locale == ApplicationConstants.Locale else {
+                return
+            }
+            
             if let otmaza = otmazaString {
                 self.currentOtmazaNumber = otmazaNumber
                 self.updateWith(otmaza: otmaza)
             } else {
-                self.recursiveGetOtmaza()
+                self.recursiveGetOtmaza(locale: locale)
             }
         }
     }
