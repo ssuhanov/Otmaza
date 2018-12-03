@@ -30,7 +30,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Some otmaza here" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-Ih-hZQ">
-                                <rect key="frame" x="16" y="96" width="343" height="598"/>
+                                <rect key="frame" x="16" y="96" width="343" height="578"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z51-Ln-KZ8">
-                                <rect key="frame" x="144" y="702" width="87" height="36"/>
+                                <rect key="frame" x="144" y="682" width="87" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Hp4-67-Pff">
                                         <variation key="heightClass=regular-widthClass=regular" constant="48"/>
@@ -125,8 +125,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6S1-Zt-rCq" secondAttribute="trailing" constant="16" id="MJy-tQ-bxz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f6y-uF-2dl" secondAttribute="trailing" constant="16" id="Mtz-eV-4im"/>
                             <constraint firstItem="6S1-Zt-rCq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bRm-TF-Q3Q"/>
-                            <constraint firstItem="z51-Ln-KZ8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="-16" id="czG-XH-XYt">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-40"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z51-Ln-KZ8" secondAttribute="bottom" constant="16" id="czG-XH-XYt">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                             </constraint>
                             <constraint firstItem="qyD-sq-x0q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="h7m-7r-tNN"/>
                             <constraint firstItem="qkX-Ih-hZQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hnx-Xc-3vl"/>
